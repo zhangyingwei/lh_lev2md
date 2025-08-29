@@ -1,0 +1,1018 @@
+# Augment Code Python开发规范
+
+## 📋 目录索引
+
+1. [概述与核心原则](#概述与核心原则)
+2. [任务管理规范](#任务管理规范)
+3. [Python开发规范](#python开发规范)
+   - [技术栈要求](#技术栈要求)
+   - [项目结构规范](#项目结构规范)
+   - [数据库规范](#数据库规范)
+4. [代码质量与安全规范](#代码质量与安全规范)
+   - [开发原则](#开发原则)
+   - [代码风格](#代码风格)
+   - [安全要求](#安全要求)
+5. [Git与记录管理](#git与记录管理)
+   - [Git提交规范](#git提交规范)
+   - [对话记录管理](#对话记录管理)
+6. [质量保证体系](#质量保证体系)
+   - [执行检查清单](#执行检查清单)
+   - [异常处理流程](#异常处理流程)
+
+---
+
+## 概述与核心原则
+
+本文档为 Augment Code AI 助手的官方开发规范，定义了使用 AI 助手进行Python项目开发时的**强制性要求**，确保开发过程可追溯、可审计、可回滚。
+
+### 🎯 核心目标
+- **提升代码质量**: 通过规范化流程确保代码简洁易懂
+- **保证过程可控**: 通过任务拆分和状态跟踪确保执行有序
+- **实现完整记录**: 通过对话记录和Git提交实现全程可追溯
+- **支持快速回滚**: 通过标准化流程支持问题快速定位和修复
+- **⚠️ 强制Python规范**: 所有开发活动必须严格遵循Python项目规范和最佳实践
+
+### 💡 执行原则
+> **重要提示**: 以下原则为强制执行规则，任何违反都需要立即纠正
+
+1. **任务驱动**: 每次交互必须进行任务拆分，严格按序执行
+2. **规范优先**: 严格遵循Python技术栈和开发规范
+3. **记录完整**: 保持完整的对话记录和Git提交历史
+4. **质量保证**: 通过检查清单确保代码质量和规范遵循
+
+---
+
+## 任务管理规范
+
+### 强制任务拆分机制
+
+#### 1. 拆分要求
+- **触发条件**: 每次交互开始时必须进行任务拆分
+- **拆分粒度**: 复杂任务必须拆分为 1-3 个明确的子任务
+- **时间估算**: 每个子任务预计执行时间约 5-10 分钟
+- **执行约束**: 严格按照拆分的任务列表顺序执行，不得跳跃或遗漏
+
+#### 2. 任务状态跟踪
+实时更新任务执行状态，确保每个子任务都有明确的完成标记：
+
+| 状态标记 | 含义 | 使用场景 |
+|---------|------|----------|
+| `[ ]` | 未开始 | 任务创建时的初始状态 |
+| `[/]` | 进行中 | 任务正在执行过程中 |
+| `[x]` | 已完成 | 任务成功完成并验证 |
+| `[-]` | 已取消 | 任务因故取消执行 |
+| `[!]` | 执行异常 | 任务执行过程中出现问题 |
+
+#### 3. 执行验证要求
+- **完成确认**: 每个子任务完成后必须进行验证
+- **状态更新**: 及时更新任务状态标记
+- **异常处理**: 遇到执行异常时，记录问题并调整后续任务
+- **遗漏检查**: 如发现任务遗漏，立即停止当前执行，返回按计划执行
+
+---
+
+## Python开发规范
+
+### 技术栈要求
+
+#### 强制性技术栈
+- **Python版本**: Python 3.8+ (推荐 3.11+)
+- **包管理**: uv 或 pip + requirements.txt
+- **代码格式化**: black + isort
+- **代码检查**: ruff 或 flake8 + mypy
+- **测试框架**: pytest
+- **文档生成**: Sphinx 或 mkdocs
+
+#### 项目结构约束
+
+**标准Python脚本项目结构**:
+```python
+project_root/
+├── src/                    # 源代码目录
+│   └── trading_system/
+│       ├── __init__.py
+│       ├── main.py        # 主入口脚本
+│       ├── config/        # 配置模块
+│       │   ├── __init__.py
+│       │   └── config_manager.py
+│       ├── data_processing/  # 数据处理模块
+│       │   ├── __init__.py
+│       │   ├── market_data_receiver.py
+│       │   └── data_validator.py
+│       ├── algorithms/    # 算法模块
+│       │   ├── __init__.py
+│       │   ├── scoring_engine.py
+│       │   └── strategy_engine.py
+│       ├── utils/         # 工具函数
+│       │   ├── __init__.py
+│       │   ├── file_handler.py
+│       │   └── exceptions.py
+│       └── tests/         # 测试代码
+│           ├── __init__.py
+│           └── test_algorithms.py
+├── data/                  # 数据目录
+│   ├── raw/              # 原始数据
+│   ├── processed/        # 处理后数据
+│   └── output/           # 输出结果
+├── config/               # 配置文件
+│   ├── config.yaml
+│   └── logging.yaml
+├── logs/                 # 日志目录
+├── scripts/              # 脚本目录
+│   ├── data_import.py
+│   └── batch_process.py
+├── requirements.txt      # 依赖管理
+├── pyproject.toml       # 项目配置
+├── README.md            # 项目说明
+└── .gitignore          # Git忽略文件
+```
+
+### 项目结构规范
+
+#### 模块组织原则
+- **单一职责**: 每个模块专注于特定功能
+- **清晰分层**: 按照业务逻辑分层组织代码
+- **依赖管理**: 合理管理模块间依赖关系
+
+#### 标准模块示例
+```python
+# data_processing/stock_data.py - 数据模型
+from dataclasses import dataclass
+from typing import Optional, List
+from datetime import datetime
+from decimal import Decimal
+
+@dataclass
+class StockData:
+    """股票数据模型"""
+    stock_code: str
+    stock_name: str
+    price: Decimal
+    volume: int
+    timestamp: datetime
+    market_value: Optional[Decimal] = None
+    
+    def to_dict(self) -> dict:
+        """转换为字典格式"""
+        return {
+            'stock_code': self.stock_code,
+            'stock_name': self.stock_name,
+            'price': float(self.price),
+            'volume': self.volume,
+            'timestamp': self.timestamp.isoformat(),
+            'market_value': float(self.market_value) if self.market_value else None
+        }
+
+# algorithms/scoring_service.py - 业务逻辑
+from typing import List, Dict
+from decimal import Decimal
+from ..data_processing.stock_data import StockData
+from ..utils.exceptions import CalculationException
+
+class ScoringService:
+    """股票评分服务类"""
+    
+    def __init__(self, config: Dict[str, float]):
+        self.config = config
+    
+    def calculate_limit_up_break_score(self, stock_data: StockData, prev_close: Decimal) -> float:
+        """计算涨停炸板评分
+        
+        Args:
+            stock_data: 股票数据
+            prev_close: 前一日收盘价
+            
+        Returns:
+            float: 评分结果
+            
+        Raises:
+            CalculationException: 当计算参数无效时抛出
+        """
+        if prev_close <= 0:
+            raise CalculationException("前一日收盘价必须大于0")
+        
+        # 计算涨停炸板评分
+        price_diff = abs(stock_data.price - prev_close)
+        score = float(price_diff / prev_close) * self.config.get('x1_percent', 1.0)
+        return score
+    
+    def batch_calculate_scores(self, stock_list: List[StockData]) -> List[Dict[str, float]]:
+        """批量计算股票评分
+        
+        Args:
+            stock_list: 股票数据列表
+            
+        Returns:
+            List[Dict]: 评分结果列表
+        """
+        results = []
+        for stock in stock_list:
+            score_data = {
+                'stock_code': stock.stock_code,
+                'total_score': self._calculate_total_score(stock)
+            }
+            results.append(score_data)
+        return results
+    
+    def _calculate_total_score(self, stock: StockData) -> float:
+        """私有方法：计算总评分"""
+        # 评分计算逻辑
+        return 0.0
+```
+
+#### 参数验证规范
+- **强制校验**: 所有公共接口参数都需要进行校验
+- **类型注解**: 使用类型注解明确参数类型
+- **数据验证**: 使用 pydantic 或 dataclasses 进行数据验证
+
+```python
+from pydantic import BaseModel, validator
+from typing import Optional
+from decimal import Decimal
+
+class StockFilterRequest(BaseModel):
+    """股票筛选请求模型"""
+    market_value_min: Decimal
+    market_value_max: Decimal
+    volume_threshold: Optional[int] = None
+    
+    @validator('market_value_min')
+    def validate_market_value_min(cls, v):
+        if v <= 0:
+            raise ValueError('最小市值必须大于0')
+        return v
+    
+    @validator('market_value_max')
+    def validate_market_value_max(cls, v, values):
+        if 'market_value_min' in values and v <= values['market_value_min']:
+            raise ValueError('最大市值必须大于最小市值')
+        return v
+    
+    @validator('volume_threshold')
+    def validate_volume_threshold(cls, v):
+        if v is not None and v < 0:
+            raise ValueError('成交量阈值不能为负数')
+        return v
+```
+
+#### 异常处理规范
+```python
+# utils/exceptions.py
+class BaseException(Exception):
+    """基础异常类"""
+    def __init__(self, message: str, code: int = 500):
+        self.message = message
+        self.code = code
+        super().__init__(self.message)
+
+class CalculationException(BaseException):
+    """计算异常"""
+    def __init__(self, message: str, code: int = 400):
+        super().__init__(message, code)
+
+class DataValidationException(BaseException):
+    """数据验证异常"""
+    def __init__(self, message: str, code: int = 422):
+        super().__init__(message, code)
+
+# 全局异常处理器示例
+import logging
+from typing import Dict, Any
+
+logger = logging.getLogger(__name__)
+
+def handle_calculation_exception(exc: Exception) -> Dict[str, Any]:
+    """计算异常处理器
+    
+    Args:
+        exc: 异常对象
+        
+    Returns:
+        Dict: 错误响应字典
+    """
+    if isinstance(exc, CalculationException):
+        logger.warning(f"计算异常: {exc.message}")
+        return {
+            "success": False,
+            "code": exc.code,
+            "message": exc.message,
+            "data": None
+        }
+    elif isinstance(exc, DataValidationException):
+        logger.warning(f"数据验证异常: {exc.message}")
+        return {
+            "success": False,
+            "code": exc.code,
+            "message": exc.message,
+            "data": None
+        }
+    else:
+        logger.error(f"系统异常: {str(exc)}", exc_info=True)
+        return {
+            "success": False,
+            "code": 500,
+            "message": "系统内部错误",
+            "data": None
+        }
+```
+
+### 数据库规范
+
+#### 命名规范
+```python
+# 表命名规范 (SQLAlchemy示例)
+from sqlalchemy import Column, String, DateTime, Decimal, Integer
+from sqlalchemy.ext.declarative import declarative_base
+from datetime import datetime
+
+Base = declarative_base()
+
+class StockInfo(Base):
+    """股票信息表"""
+    __tablename__ = 'stock_info'
+    
+    stock_code = Column(String(10), primary_key=True)
+    stock_name = Column(String(100), nullable=False)
+    market_value = Column(Decimal(15, 2), nullable=True)
+    created_at = Column(DateTime, default=datetime.utcnow)
+    updated_at = Column(DateTime, onupdate=datetime.utcnow)
+    
+    # 索引定义
+    __table_args__ = (
+        Index('idx_stock_name', 'stock_name'),
+        Index('idx_market_value', 'market_value'),
+    )
+
+class DailyQuote(Base):
+    """日线行情表"""
+    __tablename__ = 'daily_quote'
+    
+    id = Column(Integer, primary_key=True, autoincrement=True)
+    stock_code = Column(String(10), nullable=False)
+    trade_date = Column(DateTime, nullable=False)
+    open_price = Column(Decimal(10, 3), nullable=False)
+    high_price = Column(Decimal(10, 3), nullable=False)
+    low_price = Column(Decimal(10, 3), nullable=False)
+    close_price = Column(Decimal(10, 3), nullable=False)
+    volume = Column(Integer, nullable=False)
+    amount = Column(Decimal(15, 2), nullable=False)
+```
+
+#### 操作规范
+- **ORM优先**: 优先使用SQLAlchemy等ORM框架
+- **参数化查询**: 使用参数化查询防止SQL注入
+- **事务管理**: 合理使用事务装饰器
+- **连接池**: 配置合适的数据库连接池
+
+---
+
+## 代码质量与安全规范
+
+### 开发原则
+
+#### 核心设计原则
+- **SOLID原则**: 严格遵循单一职责、开闭、里氏替换、接口隔离、依赖倒置原则
+- **DRY原则**: 避免重复代码，提取公共逻辑
+- **KISS原则**: 保持代码简单易懂，避免过度设计
+- **YAGNI原则**: 不实现当前不需要的功能
+
+#### 架构设计要求
+- **分层架构**: 采用数据处理-算法计算-结果输出的分层架构设计
+- **职责分离**: 确保各层职责清晰，避免跨层调用
+- **单元测试**: 代码变更需通过单元测试覆盖，测试覆盖率不低于80%
+
+```python
+# 分层架构示例
+
+# 数据访问层：数据处理
+from abc import ABC, abstractmethod
+from typing import List, Optional
+from datetime import datetime
+
+class StockDataRepository(ABC):
+    """股票数据访问接口"""
+    
+    @abstractmethod
+    def save_stock_data(self, stock_data: StockData) -> bool:
+        """保存股票数据"""
+        pass
+    
+    @abstractmethod
+    def find_by_code(self, stock_code: str) -> Optional[StockData]:
+        """根据股票代码查找数据"""
+        pass
+    
+    @abstractmethod
+    def find_by_date_range(self, start_date: datetime, end_date: datetime) -> List[StockData]:
+        """根据日期范围查询数据"""
+        pass
+
+# 算法计算层：业务逻辑处理
+class StockAnalysisService:
+    """股票分析服务"""
+    
+    def __init__(self, data_repository: StockDataRepository):
+        self.data_repository = data_repository
+    
+    def calculate_historical_score(self, stock_code: str, date: datetime) -> float:
+        """计算历史评分"""
+        stock_data = self.data_repository.find_by_code(stock_code)
+        if not stock_data:
+            return 0.0
+        
+        # 评分计算逻辑
+        return self._compute_score(stock_data)
+    
+    def _compute_score(self, stock_data: StockData) -> float:
+        """私有方法：计算评分"""
+        # 具体评分算法实现
+        return 0.0
+
+# 应用层：脚本入口处理
+import sys
+import logging
+from pathlib import Path
+
+def main():
+    """主函数入口"""
+    try:
+        # 初始化配置
+        config = load_config("config/config.yaml")
+        
+        # 初始化服务
+        data_repo = SqliteStockDataRepository(config['database'])
+        analysis_service = StockAnalysisService(data_repo)
+        
+        # 执行分析
+        results = analysis_service.batch_analyze_stocks()
+        
+        # 输出结果
+        save_results_to_file(results, "output/analysis_results.csv")
+        
+    except Exception as e:
+        logging.error(f"程序执行异常: {e}")
+        sys.exit(1)
+
+if __name__ == "__main__":
+    main()
+```
+
+### 代码风格
+
+#### 命名规范
+- **变量和函数**: 使用 `snake_case` 格式（如 `user_name`, `save_user`）
+- **类名**: 使用 `PascalCase` 格式（如 `UserService`, `DataProcessor`）
+- **常量**: 使用 `UPPER_SNAKE_CASE` 格式（如 `MAX_LOGIN_ATTEMPTS`）
+- **私有成员**: 使用单下划线前缀（如 `_private_method`）
+- **模块名**: 使用小写字母和下划线（如 `user_service.py`）
+
+```python
+# 类名
+class UserServiceImpl:
+    """用户服务实现类"""
+    pass
+
+# 函数名
+def save_user(user_data: dict) -> User:
+    """保存用户"""
+    pass
+
+# 变量名
+user_name = "张三"
+max_retry_count = 3
+
+# 常量
+MAX_LOGIN_ATTEMPTS = 3
+DEFAULT_ENCODING = "utf-8"
+
+# 私有方法
+class UserService:
+    def _validate_user_data(self, data: dict) -> bool:
+        """私有方法：验证用户数据"""
+        pass
+```
+
+#### PEP 8 代码风格
+- **行长度**: 每行不超过88个字符（black默认）
+- **缩进**: 使用4个空格缩进
+- **导入顺序**: 标准库、第三方库、本地模块
+- **空行**: 类和函数定义前后使用适当空行
+
+```python
+# 导入顺序示例
+import os
+import sys
+from datetime import datetime
+from typing import List, Optional
+
+import pandas as pd
+import numpy as np
+from sqlalchemy import Column, String
+
+from .models.user import User
+from .utils.exceptions import BusinessException
+```
+
+#### 类型注解规范
+- **函数签名**: 所有公共函数必须添加类型注解
+- **变量注解**: 复杂类型变量需要添加类型注解
+- **返回值**: 明确标注函数返回值类型
+
+```python
+from typing import List, Dict, Optional, Union, Tuple
+from datetime import datetime
+from decimal import Decimal
+
+def process_stock_data(
+    stock_list: List[Dict[str, Union[str, Decimal, int]]], 
+    filter_active: bool = True
+) -> List[StockData]:
+    """处理股票数据
+    
+    Args:
+        stock_list: 股票数据列表
+        filter_active: 是否过滤活跃股票
+        
+    Returns:
+        List[StockData]: 处理后的股票对象列表
+    """
+    result: List[StockData] = []
+    for stock_dict in stock_list:
+        if filter_active and not stock_dict.get('is_active', False):
+            continue
+        
+        stock_data = StockData(
+            stock_code=str(stock_dict['code']),
+            stock_name=str(stock_dict['name']),
+            price=Decimal(str(stock_dict['price'])),
+            volume=int(stock_dict['volume']),
+            timestamp=datetime.now()
+        )
+        result.append(stock_data)
+    return result
+
+def calculate_technical_indicators(
+    price_data: List[Decimal],
+    period: int = 20
+) -> Tuple[Decimal, Decimal, List[Decimal]]:
+    """计算技术指标
+    
+    Args:
+        price_data: 价格数据列表
+        period: 计算周期
+        
+    Returns:
+        Tuple[Decimal, Decimal, List[Decimal]]: (均值, 标准差, 移动平均线)
+    """
+    if len(price_data) < period:
+        raise ValueError(f"数据长度不足，需要至少{period}个数据点")
+    
+    # 计算移动平均线
+    moving_averages: List[Decimal] = []
+    for i in range(period - 1, len(price_data)):
+        avg = sum(price_data[i-period+1:i+1]) / period
+        moving_averages.append(avg)
+    
+    # 计算均值和标准差
+    mean_value = sum(price_data) / len(price_data)
+    variance = sum((x - mean_value) ** 2 for x in price_data) / len(price_data)
+    std_dev = variance ** Decimal('0.5')
+    
+    return mean_value, std_dev, moving_averages
+```
+
+#### 文档字符串规范
+- **格式**: 使用Google风格或NumPy风格文档字符串
+- **内容**: 包含功能描述、参数说明、返回值、异常说明
+- **示例**: 复杂函数需要包含使用示例
+
+```python
+def calculate_stock_score(
+    price_data: Dict[str, Decimal],
+    volume_data: Dict[str, int],
+    config: Dict[str, float]
+) -> float:
+    """计算股票评分
+    
+    基于价格和成交量数据计算股票的综合评分，用于投资决策参考。
+    
+    Args:
+        price_data: 价格数据字典，包含开高低收价格
+            - open: 开盘价
+            - high: 最高价  
+            - low: 最低价
+            - close: 收盘价
+        volume_data: 成交量数据字典
+            - volume: 成交量
+            - amount: 成交额
+        config: 配置参数字典
+            - weight_price: 价格权重
+            - weight_volume: 成交量权重
+            
+    Returns:
+        float: 股票评分，范围0-100
+        
+    Raises:
+        ValueError: 当输入数据格式不正确时
+        CalculationException: 当计算过程中出现业务异常时
+        
+    Example:
+        >>> price_data = {
+        ...     'open': Decimal('10.0'), 
+        ...     'high': Decimal('11.0'), 
+        ...     'low': Decimal('9.5'), 
+        ...     'close': Decimal('10.5')
+        ... }
+        >>> volume_data = {'volume': 1000000, 'amount': 10500000}
+        >>> config = {'weight_price': 0.6, 'weight_volume': 0.4}
+        >>> score = calculate_stock_score(price_data, volume_data, config)
+        >>> print(f"股票评分: {score:.2f}")
+        股票评分: 75.30
+    """
+    # 验证输入数据
+    required_price_keys = ['open', 'high', 'low', 'close']
+    if not all(key in price_data for key in required_price_keys):
+        raise ValueError("价格数据缺少必要字段")
+    
+    # 计算价格评分
+    price_range = float(price_data['high'] - price_data['low'])
+    price_score = price_range * config.get('weight_price', 0.5)
+    
+    # 计算成交量评分
+    volume_score = (volume_data['volume'] / 1000000) * config.get('weight_volume', 0.5)
+    
+    # 综合评分
+    total_score = min(100.0, max(0.0, price_score + volume_score))
+    return total_score
+
+def batch_process_stock_files(
+    input_dir: str,
+    output_dir: str,
+    file_pattern: str = "*.csv"
+) -> Dict[str, int]:
+    """批量处理股票数据文件
+    
+    扫描指定目录下的股票数据文件，进行批量处理并输出结果。
+    
+    Args:
+        input_dir: 输入文件目录路径
+        output_dir: 输出文件目录路径
+        file_pattern: 文件匹配模式，默认为"*.csv"
+        
+    Returns:
+        Dict[str, int]: 处理结果统计
+            - processed: 成功处理的文件数量
+            - failed: 处理失败的文件数量
+            - total: 总文件数量
+            
+    Raises:
+        FileNotFoundError: 当输入目录不存在时
+        PermissionError: 当没有文件访问权限时
+        
+    Example:
+        >>> result = batch_process_stock_files(
+        ...     input_dir="data/raw",
+        ...     output_dir="data/processed",
+        ...     file_pattern="stock_*.csv"
+        ... )
+        >>> print(f"处理完成: {result['processed']}/{result['total']}")
+        处理完成: 95/100
+    """
+    from pathlib import Path
+    import glob
+    
+    input_path = Path(input_dir)
+    if not input_path.exists():
+        raise FileNotFoundError(f"输入目录不存在: {input_dir}")
+    
+    # 获取匹配的文件列表
+    file_list = glob.glob(str(input_path / file_pattern))
+    
+    processed = 0
+    failed = 0
+    
+    for file_path in file_list:
+        try:
+            # 处理单个文件
+            process_single_stock_file(file_path, output_dir)
+            processed += 1
+        except Exception as e:
+            logger.error(f"处理文件失败 {file_path}: {e}")
+            failed += 1
+    
+    return {
+        'processed': processed,
+        'failed': failed,
+        'total': len(file_list)
+    }
+```
+
+### 安全要求
+
+#### 常见安全漏洞防护
+- **SQL注入防护**: 使用ORM或参数化查询
+- **输入验证**: 对所有用户输入进行验证和清理
+- **敏感信息**: 避免在日志中记录敏感信息
+- **依赖安全**: 定期更新依赖包，使用安全扫描工具
+
+```python
+# ✅ 正确：使用ORM参数化查询
+from sqlalchemy import select
+from sqlalchemy.orm import Session
+
+async def find_stock_by_code(session: Session, stock_code: str) -> Optional[StockInfo]:
+    """根据股票代码查找股票信息"""
+    query = select(StockInfo).where(StockInfo.stock_code == stock_code)
+    result = await session.execute(query)
+    return result.scalar_one_or_none()
+
+# ✅ 正确：文件路径验证
+import os
+from pathlib import Path
+
+def safe_file_read(file_path: str, base_dir: str = "data") -> str:
+    """安全的文件读取"""
+    # 验证文件路径，防止目录遍历攻击
+    safe_path = Path(base_dir) / Path(file_path).name
+    if not safe_path.exists():
+        raise FileNotFoundError(f"文件不存在: {safe_path}")
+    
+    # 确保文件在允许的目录内
+    if not str(safe_path.resolve()).startswith(str(Path(base_dir).resolve())):
+        raise ValueError("不允许访问指定目录外的文件")
+    
+    with open(safe_path, 'r', encoding='utf-8') as f:
+        return f.read()
+
+# ❌ 错误：字符串拼接SQL
+def find_stock_unsafe(stock_code: str):
+    sql = f"SELECT * FROM stock_info WHERE stock_code = '{stock_code}'"
+    # 存在SQL注入风险
+
+# ❌ 错误：不安全的文件操作
+def unsafe_file_read(file_path: str):
+    with open(file_path, 'r') as f:  # 可能被利用进行目录遍历攻击
+        return f.read()
+```
+
+#### 数据安全规范
+- **敏感信息加密**: 密码、密钥等敏感信息必须加密存储
+- **环境变量**: 使用环境变量管理敏感配置
+- **日志安全**: 避免在日志中记录敏感信息
+
+```python
+import os
+import logging
+from cryptography.fernet import Fernet
+from typing import Dict, Any
+
+# 使用环境变量管理敏感配置
+DATABASE_URL = os.getenv("DATABASE_URL")
+API_SECRET_KEY = os.getenv("API_SECRET_KEY")
+ENCRYPTION_KEY = os.getenv("ENCRYPTION_KEY")
+
+# 敏感信息加密
+def encrypt_sensitive_data(data: str) -> str:
+    """加密敏感数据"""
+    if not ENCRYPTION_KEY:
+        raise ValueError("加密密钥未配置")
+    
+    f = Fernet(ENCRYPTION_KEY.encode())
+    encrypted_data = f.encrypt(data.encode())
+    return encrypted_data.decode()
+
+def decrypt_sensitive_data(encrypted_data: str) -> str:
+    """解密敏感数据"""
+    if not ENCRYPTION_KEY:
+        raise ValueError("加密密钥未配置")
+    
+    f = Fernet(ENCRYPTION_KEY.encode())
+    decrypted_data = f.decrypt(encrypted_data.encode())
+    return decrypted_data.decode()
+
+# 安全的日志记录
+def safe_log_stock_operation(stock_code: str, operation: str, **kwargs):
+    """安全的股票操作日志记录"""
+    # 过滤敏感信息
+    safe_kwargs = {}
+    sensitive_keys = ['password', 'token', 'secret', 'key']
+    
+    for key, value in kwargs.items():
+        if any(sensitive in key.lower() for sensitive in sensitive_keys):
+            safe_kwargs[key] = "***"  # 脱敏处理
+        else:
+            safe_kwargs[key] = value
+    
+    logging.info(f"股票操作: {operation}, 代码: {stock_code}, 参数: {safe_kwargs}")
+
+# 配置文件安全加载
+def load_secure_config(config_path: str) -> Dict[str, Any]:
+    """安全加载配置文件"""
+    import yaml
+    from pathlib import Path
+    
+    config_file = Path(config_path)
+    if not config_file.exists():
+        raise FileNotFoundError(f"配置文件不存在: {config_path}")
+    
+    # 验证文件权限
+    if config_file.stat().st_mode & 0o077:
+        logging.warning(f"配置文件权限过于宽松: {config_path}")
+    
+    with open(config_file, 'r', encoding='utf-8') as f:
+        config = yaml.safe_load(f)
+    
+    # 验证必要的配置项
+    required_keys = ['database', 'logging']
+    missing_keys = [key for key in required_keys if key not in config]
+    if missing_keys:
+        raise ValueError(f"配置文件缺少必要项: {missing_keys}")
+    
+    return config
+```
+
+---
+
+## Git与记录管理
+
+### Git提交规范
+
+#### 提交时机
+- **强制要求**: 每次编码工作完成后，必须创建 Git 提交记录
+- **提交粒度**: 每个提交应包含一个完整的功能模块或独立可验证的子任务
+- **提交频率**: 保持"小步提交、可回滚"原则
+
+#### 提交信息格式
+遵循 Conventional Commits 规范：
+
+```
+<type>(<scope>): <description> (#<task_id>)
+
+[optional body]
+
+[optional footer]
+```
+
+##### 类型说明
+| 类型 | 描述 | 使用场景 |
+|------|------|----------|
+| `feat` | 新功能 | 添加新的功能特性 |
+| `fix` | Bug 修复 | 修复已知问题 |
+| `docs` | 文档更新 | 更新文档内容 |
+| `style` | 代码格式调整 | 代码风格、格式调整 |
+| `refactor` | 代码重构 | 重构现有代码 |
+| `test` | 测试相关 | 添加或修改测试 |
+| `chore` | 构建过程或辅助工具的变动 | 构建配置、依赖更新等 |
+
+##### 提交示例
+```bash
+feat(user): 新增用户导出功能 (#TASK-20250115-001)
+
+- 添加导出接口
+- 实现 Excel 格式导出
+- 添加权限验证
+
+Closes #123
+```
+
+### 对话记录管理
+
+#### 记录要求
+必须保存完整的 AI Agent 交互对话记录，包括：
+- 用户输入
+- Agent 输出
+- 重要工具调用
+- 关键信息检索过程
+
+#### 存储规范
+- **强制路径**: 项目根目录的 `.chat` 目录
+- **文件命名**: `chat-{YYYYMMDD-HHmmss}-{task_id}.jsonl`
+- **文件格式**: JSON Lines（.jsonl）或 Markdown（.md）
+
+#### 基本字段结构
+```json
+{
+  "timestamp": "时间戳",
+  "role": "角色（user/agent/tool）",
+  "content": "内容",
+  "task_id": "任务ID",
+  "commit_id": "提交ID（如有）",
+  "attachments": "附件（可选）"
+}
+```
+
+#### 版本控制要求
+- 所有对话记录文件应纳入 Git 版本管理
+- 涉及敏感信息的内容需脱敏处理
+- 不允许覆盖已有记录，只允许追加新文件
+- 如需修订，使用"修订说明"追加一条记录
+
+---
+
+## 质量保证体系
+
+### 执行检查清单
+
+#### 任务管理检查
+- [ ] 是否完成任务拆分？
+- [ ] 是否按顺序执行？
+- [ ] 是否有遗漏任务？
+- [ ] 是否更新任务状态？
+- [ ] 是否完成验证？
+
+#### Git 提交检查
+- [ ] 是否在功能完成后创建提交？
+- [ ] 提交信息是否遵循 Conventional Commits 规范？
+- [ ] 提交粒度是否合理？
+- [ ] 是否包含任务ID？
+
+#### 对话记录检查
+- [ ] 是否保存完整的对话记录？
+- [ ] 文件命名是否符合规范？
+- [ ] 是否存储在正确的目录？
+- [ ] 是否纳入版本控制？
+
+#### 代码质量检查
+- [ ] 是否遵循Python代码风格规范？
+- [ ] 是否实施了安全性开发要求？
+- [ ] 是否符合PEP 8代码风格？
+- [ ] 是否添加了类型注解？
+- [ ] 是否添加了适当的文档字符串？
+- [ ] 是否考虑了扩展性设计？
+
+#### Python项目规范检查
+- [ ] 是否符合Python项目结构要求？
+- [ ] 是否通过代码质量检查工具验证？
+- [ ] 是否在Python环境中测试验证？
+- [ ] 是否使用了推荐的Python工具和库？
+
+### 异常处理流程
+
+#### 任务执行异常
+1. **发现遗漏** → 立即停止当前执行
+2. **重新检查** → 标记遗漏任务
+3. **返回执行** → 按原计划继续
+4. **记录原因** → 优化后续执行
+
+#### 规则违反处理
+1. **Git 提交缺失**: 立即创建补充提交，记录遗漏原因
+2. **对话记录缺失**: 补充记录当前会话，标注补充说明
+3. **任务状态不一致**: 重新核对任务列表，更正状态标记
+4. **质量检查失败**: 重新执行相关任务，确保符合标准
+
+### 审计与回滚
+
+#### 审计要求
+- 所有开发活动必须有完整记录
+- Git 提交历史清晰可追溯
+- 对话记录完整保存
+- 任务执行状态准确记录
+
+#### 回滚机制
+- **代码回滚**: 基于 Git 提交的代码回滚
+- **决策回溯**: 基于对话记录的决策回溯
+- **进度恢复**: 基于任务状态的进度恢复
+
+---
+
+## 实施指南
+
+### 开发者职责
+1. **规范遵循**: 严格遵循所有规范要求
+2. **及时提交**: 及时创建 Git 提交
+3. **记录维护**: 维护完整的对话记录
+4. **任务管理**: 按任务拆分执行开发
+5. **Python规范**: 确保与Python开发规范的一致性
+
+### Agent 职责
+1. **任务拆分**: 严格执行任务拆分
+2. **记录管理**: 自动记录对话过程
+3. **强制执行**: 在每次对话结束前，必须主动执行以下操作：
+   - 创建 `.chat` 目录（如不存在）
+   - 保存完整对话记录到 `.chat/chat-{YYYYMMDD-HHmmss}-{task_id}.jsonl`
+   - 执行 `git add .` 和 `git commit` 命令，提交所有更改
+4. **可追溯性**: 确保所有操作可追溯
+5. **工具集成**: 集成Python开发工具
+
+### 常见问题处理
+
+#### Q: 如何处理任务拆分过细的情况？
+A: 合并相关的小任务，确保每个任务有独立的价值和验收标准。
+
+#### Q: 对话记录文件过大怎么办？
+A: 按日期或任务ID分目录存储，单个文件建议不超过10MB。
+
+#### Q: Git提交信息写错了怎么办？
+A: 使用 `git commit --amend` 修改最近一次提交，或创建新的修正提交。
+
+#### Q: 如何确保Python代码质量？
+A: 使用black、isort、ruff等工具进行代码格式化和检查，配置pre-commit钩子自动执行。
+
+---
+
+**Always respond in 简体中文**
+
+*Augment Code Python开发规范*
+*版本: v5.0*
+*最后更新: 2025-01-21*
+*文档状态: 已适配Python项目开发*

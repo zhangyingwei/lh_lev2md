@@ -1,0 +1,106 @@
+# 构建产物
+/dist/
+/build/
+*.exe
+*.dll
+*.so
+*.dylib
+
+# Go 构建产物
+/bin/
+/pkg/
+*.test
+*.prof
+*.out
+
+# 依赖管理
+/vendor/
+go.sum
+
+# 临时文件
+*.tmp
+*.temp
+*.log
+*.pid
+*.swp
+*.swo
+*~
+
+# IDE 和编辑器文件
+.vscode/
+.idea/
+*.iml
+.DS_Store
+Thumbs.db
+
+# 环境配置
+.env
+.env.local
+.env.*.local
+
+# 日志文件
+/logs/
+*.log
+
+# 缓存目录
+.cache/
+/tmp/
+
+# 测试覆盖率
+coverage.txt
+coverage.html
+*.cover
+
+# 文档生成
+/docs/build/
+/docs/dist/
+
+# 敏感信息
+*.key
+*.pem
+*.p12
+secrets.json
+config.local.json
+
+# 大文件
+*.zip
+*.tar.gz
+*.rar
+*.7z
+*.iso
+*.dmg
+
+# 媒体文件
+*.mp4
+*.avi
+*.mov
+*.wmv
+*.flv
+*.mp3
+*.wav
+*.flac
+
+# 数据库文件
+*.db
+*.sqlite
+*.sqlite3
+
+# 备份文件
+*.bak
+*.backup
+*.old
+
+# Node.js (如果项目包含前端部分)
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# 操作系统文件
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
