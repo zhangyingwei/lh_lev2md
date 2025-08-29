@@ -1,0 +1,104 @@
+# 股票自动交易系统配置文件
+
+system:
+  name: "股票自动交易系统"
+  version: "1.0.0"
+  environment: "development"
+  timezone: "Asia/Shanghai"
+
+# 数据库配置
+database:
+  sqlite:
+    path: "data/trading_system.db"
+    echo: false
+  redis:
+    host: "localhost"
+    port: 6379
+    db: 0
+    password: null
+
+# Level2行情配置
+level2:
+  connection_mode: "tcp"  # tcp/multicast
+  tcp_address: "tcp://127.0.0.1:6900"
+  user_id: ""
+  password: ""
+  max_reconnect_attempts: 10
+  reconnect_interval: 5
+
+# 评分算法参数
+scoring_parameters:
+  x1_percent: 0.05      # 涨停炸板评分系数
+  x2_percent: 0.03      # 跌幅评分系数
+  x3_percent: 0.04      # 连续跌幅评分系数
+  decline_threshold: -0.02  # 跌幅阈值
+  limit_up_seal_threshold: 30000000  # 涨停封单阈值(3000万)
+  reseal_count_threshold: 5  # 回封次数阈值
+
+# 股票池筛选参数
+pool_parameters:
+  # 股票池A参数
+  pool_a_min_market_value: 10    # 最小流通市值(亿)
+  pool_a_max_market_value: 100   # 最大流通市值(亿)
+  
+  # 股票池B参数
+  pool_b_min_market_value: 50    # 最小流通市值(亿)
+  pool_b_max_market_value: 400   # 最大流通市值(亿)
+  
+  # 通用筛选参数
+  min_auction_amount: 10000000   # 最小竞价成交额(1000万)
+  min_opening_turnover: 0.002    # 最小开盘换手率(0.2%)
+  min_auction_change: -0.02      # 最小竞价涨幅(-2%)
+  min_auction_ratio: 0.1         # 最小竞价成交比(10%)
+
+# 买入策略参数
+strategy_parameters:
+  # 主力资金策略1
+  main_fund_threshold_1: 10000000   # 主力净额阈值(1000万)
+  main_fund_ratio_1: 0.005          # 主力净比阈值(0.5%)
+  change_threshold_1: 0.01          # 涨幅阈值(1%)
+  buy_ratio_1: 0.0005               # 买入比例(0.05%)
+  
+  # 主力资金策略2
+  main_fund_threshold_2: 100000000  # 主力净额阈值(1亿)
+  main_fund_ratio_2: 0.005          # 主力净比阈值(0.5%)
+  change_threshold_2: 0.07          # 涨幅阈值(7%)
+  amount_threshold: 300000000       # 成交额阈值(3亿)
+  turnover_threshold: 0.01          # 换手率阈值(1%)
+
+# 风控参数
+risk_management:
+  total_capital: 1000000        # 总资金(100万)
+  max_position_ratio: 0.1       # 单股最大仓位比例(10%)
+  max_daily_loss: 0.05          # 单日最大亏损比例(5%)
+  stop_loss_ratio: 0.08         # 止损比例(8%)
+  take_profit_ratio: 0.15       # 止盈比例(15%)
+
+# 性能配置
+performance:
+  max_workers: 4                # 最大工作线程数
+  queue_size: 10000            # 队列大小
+  batch_size: 100              # 批处理大小
+  process_interval: 0.01       # 处理间隔(10ms)
+  large_order_threshold: 200000  # 大单阈值(20万)
+  super_large_threshold: 1000000 # 超大单阈值(100万)
+
+# 监控告警配置
+monitoring:
+  enabled: true
+  metrics_interval: 30         # 指标收集间隔(秒)
+  alert_thresholds:
+    cpu_usage: 80.0           # CPU使用率告警阈值
+    memory_usage: 85.0        # 内存使用率告警阈值
+    disk_usage: 90.0          # 磁盘使用率告警阈值
+    queue_size: 5000          # 队列大小告警阈值
+    processing_latency: 1.0   # 处理延迟告警阈值(秒)
+
+# 日志配置
+logging:
+  level: "INFO"               # DEBUG/INFO/WARNING/ERROR
+  format: "%(asctime)s - %(name)s - %(levelname)s - %(message)s"
+  file_path: "logs/trading_system.log"
+  max_file_size: "100MB"
+  backup_count: 10
+  rotation: "daily"
