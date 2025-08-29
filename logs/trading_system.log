@@ -1,0 +1,868 @@
+2025-08-29 18:01:13,752 - trading_system.database_init - INFO - 数据库初始化成功
+2025-08-29 18:01:13,752 - trading_system - INFO - 实时数据处理器测试器初始化完成
+2025-08-29 18:01:13,753 - trading_system - INFO - 开始测试单个实时数据处理器...
+2025-08-29 18:01:18,909 - trading_system.redis_cache - WARNING - Redis缓存连接失败: Authentication required.，将使用内存缓存
+2025-08-29 18:01:18,910 - trading_system.realtime_processor - INFO - 实时数据处理器初始化完成
+2025-08-29 18:01:18,910 - trading_system.realtime_processor - INFO - 启动实时数据处理器...
+2025-08-29 18:01:18,910 - trading_system.realtime_processor - INFO - 实时数据处理器启动成功，工作线程数: 2
+2025-08-29 18:01:18,918 - trading_system - INFO - 开始处理测试数据...
+2025-08-29 18:01:22,479 - trading_system - INFO - 处理完成，耗时: 3.56秒
+2025-08-29 18:01:22,480 - trading_system - INFO - 处理统计: {'total_processed': 150, 'market_data_processed': 50, 'transaction_processed': 50, 'order_detail_processed': 50, 'processing_errors': 0, 'avg_processing_time': 0.0, 'last_processing_time': '2025-08-29T18:01:19.357658', 'queue_size': 0, 'buffer_status': {'market_data_count': 16, 'transaction_count': 16, 'order_detail_count': 17, 'total_count': 49}, 'cache_available': False, 'is_running': True}
+2025-08-29 18:01:22,480 - trading_system - INFO - 性能指标: {'avg_processing_time': 0.00014811356862386068, 'min_processing_time': 1.430511474609375e-06, 'max_processing_time': 0.008230209350585938, 'p95_processing_time': 6.961822509765625e-05, 'p99_processing_time': 0.007265567779541016, 'sample_count': 150}
+2025-08-29 18:01:22,480 - trading_system - INFO - 缓存测试成功: {'stock_code': '000001', 'timestamp': '2025-08-29T18:01:18.918601', 'last_price': '10.45', 'volume': 145000, 'amount': '1515250.00', 'bid_price_1': '10.44', 'bid_volume_1': 1450, 'ask_price_1': '10.46', 'ask_volume_1': 1450}
+2025-08-29 18:01:22,485 - trading_system - INFO - 缓冲区刷新成功
+2025-08-29 18:01:22,485 - trading_system.realtime_processor - INFO - 停止实时数据处理器...
+2025-08-29 18:01:48,935 - trading_system.realtime_processor - INFO - 性能监控 - 总处理: 150, 平均耗时: 0.0001s, 缓冲区: 0, 错误: 0
+2025-08-29 18:01:48,936 - trading_system.realtime_processor - INFO - 实时数据处理器已停止
+2025-08-29 18:01:48,936 - trading_system - INFO - 单个处理器测试成功
+2025-08-29 18:08:31,461 - trading_system.database_init - INFO - 数据库初始化成功
+2025-08-29 18:08:31,461 - trading_system - INFO - 连接管理器测试器初始化完成
+2025-08-29 18:08:31,462 - trading_system - INFO - 开始测试Level2服务集成...
+2025-08-29 18:08:31,462 - trading_system.level2_service - INFO - Level2数据服务初始化完成
+2025-08-29 18:08:31,462 - trading_system.level2_service - INFO - 初始化Level2数据服务组件...
+2025-08-29 18:08:31,462 - trading_system.mock_level2_receiver - INFO - 模拟Level2数据接收器初始化完成
+2025-08-29 18:08:31,462 - trading_system.level2_service - INFO - Level2数据接收器创建成功
+2025-08-29 18:08:35,411 - trading_system.redis_cache - WARNING - Redis缓存连接失败: Authentication required.，将使用内存缓存
+2025-08-29 18:08:35,411 - trading_system.realtime_processor - INFO - 实时数据处理器初始化完成
+2025-08-29 18:08:35,411 - trading_system.level2_service - INFO - 实时数据处理器创建成功
+2025-08-29 18:08:35,412 - trading_system.connection_manager - INFO - 连接管理器初始化完成
+2025-08-29 18:08:35,412 - trading_system.level2_service - INFO - 连接管理器创建成功
+2025-08-29 18:08:35,412 - trading_system.connection_manager - INFO - 连接实例已设置
+2025-08-29 18:08:35,412 - trading_system.level2_service - INFO - Level2数据服务组件初始化完成
+2025-08-29 18:08:35,412 - trading_system.level2_service - INFO - 启动Level2数据服务...
+2025-08-29 18:08:35,412 - trading_system.realtime_processor - INFO - 启动实时数据处理器...
+2025-08-29 18:08:35,413 - trading_system.realtime_processor - INFO - 实时数据处理器启动成功，工作线程数: 1
+2025-08-29 18:08:35,413 - trading_system.connection_manager - INFO - 启动连接监控...
+2025-08-29 18:08:35,413 - trading_system.connection_manager - INFO - 健康检查已启动
+2025-08-29 18:08:35,413 - trading_system.connection_manager - INFO - 质量监控已启动
+2025-08-29 18:08:35,413 - trading_system.connection_manager - INFO - 连接监控启动成功
+2025-08-29 18:08:35,413 - trading_system.mock_level2_receiver - INFO - 启动模拟Level2数据接收器...
+2025-08-29 18:08:36,414 - trading_system.mock_level2_receiver - INFO - 模拟连接成功
+2025-08-29 18:08:37,415 - trading_system.mock_level2_receiver - INFO - 模拟登录成功
+2025-08-29 18:08:37,416 - trading_system.mock_level2_receiver - INFO - 开始生成模拟数据...
+2025-08-29 18:08:37,416 - trading_system.mock_level2_receiver - INFO - 模拟Level2数据接收器启动成功
+2025-08-29 18:08:37,424 - trading_system.level2_service - INFO - Level2数据服务启动成功
+2025-08-29 18:08:37,425 - trading_system.mock_level2_receiver - INFO - 模拟订阅快照行情: ['000001', '600000'] @ COMM
+2025-08-29 18:08:37,425 - trading_system.mock_level2_receiver - INFO - 模拟订阅逐笔成交: ['000001'] @ SZSE
+2025-08-29 18:08:37,425 - trading_system.mock_level2_receiver - INFO - 模拟订阅逐笔委托: ['000001'] @ SZSE
+2025-08-29 18:08:37,425 - trading_system - INFO - 服务运行中，收集数据...
+2025-08-29 18:08:40,430 - trading_system.connection_manager - WARNING - 健康检查失败，可能需要重连
+2025-08-29 18:08:40,430 - trading_system.connection_manager - WARNING - 连接丢失，原因码: -1
+2025-08-29 18:08:40,430 - trading_system.level2_service - WARNING - Level2连接断开，原因码: -1
+2025-08-29 18:08:43,442 - trading_system.connection_manager - WARNING - 健康检查失败，可能需要重连
+2025-08-29 18:08:43,443 - trading_system.connection_manager - WARNING - 连接丢失，原因码: -1
+2025-08-29 18:08:43,444 - trading_system.level2_service - WARNING - Level2连接断开，原因码: -1
+2025-08-29 18:08:46,455 - trading_system.connection_manager - WARNING - 健康检查失败，可能需要重连
+2025-08-29 18:08:46,456 - trading_system.connection_manager - WARNING - 连接丢失，原因码: -1
+2025-08-29 18:08:46,457 - trading_system.level2_service - WARNING - Level2连接断开，原因码: -1
+2025-08-29 18:08:47,428 - trading_system - INFO - 服务状态: {'is_running': True, 'is_initialized': True, 'service_stats': {'start_time': datetime.datetime(2025, 8, 29, 18, 8, 37, 424089), 'total_data_processed': 0, 'connection_events': 3, 'error_count': 0}, 'receiver_status': {'is_running': True, 'is_connected': True, 'is_logged_in': True, 'reconnect_count': 0, 'stats': {'market_data_count': 16, 'transaction_count': 7, 'order_detail_count': 11, 'last_data_time': datetime.datetime(2025, 8, 29, 18, 8, 47, 192335), 'start_time': datetime.datetime(2025, 8, 29, 18, 8, 35, 413681)}, 'config': {'connection_mode': 'mock', 'mock_mode': True}}, 'processor_status': {'total_processed': 0, 'market_data_processed': 0, 'transaction_processed': 0, 'order_detail_processed': 0, 'processing_errors': 0, 'avg_processing_time': 0.0, 'last_processing_time': None, 'queue_size': 0, 'buffer_status': {'market_data_count': 0, 'transaction_count': 0, 'order_detail_count': 0, 'total_count': 0}, 'cache_available': False, 'is_running': True}, 'connection_status': {'state': 'disconnected', 'current_attempt': 0, 'max_attempts': 3, 'next_reconnect_time': None, 'metrics': {'connect_time': None, 'last_heartbeat': None, 'total_connects': 0, 'total_disconnects': 3, 'total_reconnects': 0, 'failed_attempts': 0, 'data_received_count': 0, 'last_data_time': None, 'connection_uptime_seconds': 0.0, 'packet_loss_rate': 0.0}}, 'health_status': {'is_healthy': False, 'state': 'disconnected', 'data_rate': 0.0, 'no_data_duration': 0.0, 'health_check_enabled': True, 'quality_monitor_enabled': True, 'failure_detection_enabled': True}}
+2025-08-29 18:08:47,429 - trading_system - WARNING - 未处理任何数据
+2025-08-29 18:08:47,429 - trading_system - INFO - 测试强制重连...
+2025-08-29 18:08:47,429 - trading_system.connection_manager - INFO - 强制重连
+2025-08-29 18:08:47,430 - trading_system.connection_manager - WARNING - 连接丢失，原因码: -999
+2025-08-29 18:08:47,430 - trading_system.level2_service - WARNING - Level2连接断开，原因码: -999
+2025-08-29 18:08:49,467 - trading_system.connection_manager - WARNING - 健康检查失败，可能需要重连
+2025-08-29 18:08:49,468 - trading_system.connection_manager - WARNING - 连接丢失，原因码: -1
+2025-08-29 18:08:49,468 - trading_system.level2_service - WARNING - Level2连接断开，原因码: -1
+2025-08-29 18:08:50,441 - trading_system - INFO - 缓冲区刷新成功
+2025-08-29 18:08:50,442 - trading_system.level2_service - INFO - 停止Level2数据服务...
+2025-08-29 18:08:50,442 - trading_system.mock_level2_receiver - INFO - 停止模拟Level2数据接收器...
+2025-08-29 18:08:50,477 - trading_system.mock_level2_receiver - INFO - 模拟Level2数据接收器已停止
+2025-08-29 18:08:50,477 - trading_system.level2_service - INFO - Level2数据接收器已停止
+2025-08-29 18:08:50,477 - trading_system.connection_manager - INFO - 停止连接监控...
+2025-08-29 18:08:50,477 - trading_system.connection_manager - INFO - 连接监控已停止
+2025-08-29 18:08:50,477 - trading_system.level2_service - INFO - 连接监控已停止
+2025-08-29 18:08:50,478 - trading_system.realtime_processor - INFO - 停止实时数据处理器...
+2025-08-29 18:09:07,433 - trading_system.realtime_processor - INFO - 性能监控 - 总处理: 0, 平均耗时: 0.0000s, 缓冲区: 0, 错误: 0
+2025-08-29 18:09:07,434 - trading_system.realtime_processor - INFO - 实时数据处理器已停止
+2025-08-29 18:09:07,434 - trading_system.level2_service - INFO - 实时数据处理器已停止
+2025-08-29 18:09:07,434 - trading_system.level2_service - INFO - Level2数据服务已停止
+2025-08-29 18:09:07,435 - trading_system - INFO - Level2服务集成测试成功
+2025-08-29 18:26:49,212 - trading_system.database_init - INFO - 数据库初始化成功
+2025-08-29 18:26:49,212 - trading_system.limit_up_detector - INFO - 涨停炸板检测器初始化完成
+2025-08-29 18:26:49,212 - trading_system.limit_up_scorer - INFO - 涨停炸板评分器初始化完成
+2025-08-29 18:26:49,213 - trading_system.limit_up_analyzer - INFO - 涨停炸板分析器初始化完成
+2025-08-29 18:26:49,213 - trading_system - INFO - 涨停炸板分析器测试器初始化完成
+2025-08-29 18:26:49,213 - trading_system - INFO - 开始涨停炸板分析器完整测试
+2025-08-29 18:26:49,213 - trading_system - INFO - 执行 涨停检测功能测试...
+2025-08-29 18:26:49,213 - trading_system - INFO - 开始测试涨停检测功能...
+2025-08-29 18:26:49,221 - trading_system.limit_up_detector - INFO - 检测到涨停: 000001, 价格: 10.95000, 涨停价: 10.95000
+2025-08-29 18:26:49,221 - trading_system - INFO - 检测到涨停: 2025-08-29 18:28:29.213710, 价格: 10.95000
+2025-08-29 18:26:49,221 - trading_system - INFO - 检测到涨停: 2025-08-29 18:28:39.213710, 价格: 10.95000
+2025-08-29 18:26:49,222 - trading_system - INFO - 检测到涨停: 2025-08-29 18:28:49.213710, 价格: 10.95000
+2025-08-29 18:26:49,222 - trading_system - INFO - 检测到涨停: 2025-08-29 18:28:59.213710, 价格: 10.95000
+2025-08-29 18:26:49,222 - trading_system - INFO - 检测到涨停: 2025-08-29 18:29:09.213710, 价格: 10.95000
+2025-08-29 18:26:49,222 - trading_system - INFO - 检测到涨停: 2025-08-29 18:29:19.213710, 价格: 10.95000
+2025-08-29 18:26:49,222 - trading_system - INFO - 检测到涨停: 2025-08-29 18:29:29.213710, 价格: 10.95000
+2025-08-29 18:26:49,222 - trading_system - INFO - 检测到涨停: 2025-08-29 18:29:39.213710, 价格: 10.95000
+2025-08-29 18:26:49,222 - trading_system - INFO - 检测到涨停: 2025-08-29 18:29:49.213710, 价格: 10.95000
+2025-08-29 18:26:49,223 - trading_system - INFO - 检测到涨停: 2025-08-29 18:29:59.213710, 价格: 10.95000
+2025-08-29 18:26:49,223 - trading_system - INFO - 检测到涨停: 2025-08-29 18:30:09.213710, 价格: 10.95000
+2025-08-29 18:26:49,223 - trading_system - INFO - 检测到涨停: 2025-08-29 18:30:19.213710, 价格: 10.95000
+2025-08-29 18:26:49,223 - trading_system - INFO - 检测到涨停: 2025-08-29 18:30:29.213710, 价格: 10.95000
+2025-08-29 18:26:49,224 - trading_system - INFO - 检测到涨停: 2025-08-29 18:30:39.213710, 价格: 10.95000
+2025-08-29 18:26:49,224 - trading_system - INFO - 检测到涨停: 2025-08-29 18:30:49.213710, 价格: 10.95000
+2025-08-29 18:26:49,224 - trading_system - INFO - 检测到涨停: 2025-08-29 18:30:59.213710, 价格: 10.95000
+2025-08-29 18:26:49,224 - trading_system - INFO - 检测到涨停: 2025-08-29 18:31:09.213710, 价格: 10.95000
+2025-08-29 18:26:49,224 - trading_system - INFO - 检测到涨停: 2025-08-29 18:31:19.213710, 价格: 10.95000
+2025-08-29 18:26:49,224 - trading_system - INFO - 检测到涨停: 2025-08-29 18:31:29.213710, 价格: 10.95000
+2025-08-29 18:26:49,225 - trading_system - INFO - 检测到涨停: 2025-08-29 18:31:39.213710, 价格: 10.95000
+2025-08-29 18:26:49,225 - trading_system.limit_up_detector - INFO - 检测到炸板: 000001, 当前价格: 10.7310000
+2025-08-29 18:26:49,225 - trading_system.limit_up_analyzer - INFO - 炸板事件: 000001, 评分: 68.19
+2025-08-29 18:26:49,225 - trading_system - INFO - 检测到炸板事件: 评分=68.19, 持续时间=190秒
+2025-08-29 18:26:49,226 - trading_system.limit_up_analyzer - INFO - 炸板事件: 000001, 评分: 68.12
+2025-08-29 18:26:49,226 - trading_system - INFO - 检测到炸板事件: 评分=68.12, 持续时间=190秒
+2025-08-29 18:26:49,226 - trading_system.limit_up_analyzer - INFO - 炸板事件: 000001, 评分: 68.09
+2025-08-29 18:26:49,226 - trading_system - INFO - 检测到炸板事件: 评分=68.09, 持续时间=190秒
+2025-08-29 18:26:49,226 - trading_system - INFO - 涨停检测功能测试成功
+2025-08-29 18:26:49,227 - trading_system - INFO - ✅ 涨停检测功能测试 通过
+2025-08-29 18:26:49,227 - trading_system - INFO - 执行 评分算法测试...
+2025-08-29 18:26:49,227 - trading_system - INFO - 开始测试评分算法...
+2025-08-29 18:26:49,228 - trading_system.limit_up_analyzer - INFO - 炸板事件: 000001, 评分: 38.76
+2025-08-29 18:26:49,228 - trading_system.limit_up_analyzer - INFO - 炸板事件: 000001, 评分: 39.33
+2025-08-29 18:26:49,229 - trading_system.limit_up_analyzer - INFO - 炸板事件: 000001, 评分: 39.89
+2025-08-29 18:26:49,229 - trading_system.limit_up_analyzer - INFO - 炸板事件: 000001, 评分: 40.45
+2025-08-29 18:26:49,229 - trading_system.limit_up_analyzer - INFO - 炸板事件: 000001, 评分: 41.00
+2025-08-29 18:26:49,229 - trading_system.limit_up_analyzer - INFO - 炸板事件: 000001, 评分: 41.55
+2025-08-29 18:26:49,230 - trading_system.limit_up_analyzer - INFO - 炸板事件: 000001, 评分: 42.10
+2025-08-29 18:26:49,230 - trading_system.limit_up_analyzer - INFO - 炸板事件: 000001, 评分: 42.65
+2025-08-29 18:26:49,230 - trading_system.limit_up_analyzer - INFO - 炸板事件: 000001, 评分: 43.20
+2025-08-29 18:26:49,231 - trading_system.limit_up_analyzer - INFO - 炸板事件: 000001, 评分: 43.74
+2025-08-29 18:26:49,231 - trading_system.limit_up_detector - INFO - 检测到涨停: 000001, 价格: 10.95000, 涨停价: 10.95000
+2025-08-29 18:26:49,231 - trading_system.limit_up_detector - INFO - 检测到炸板: 000001, 当前价格: 10.7310000
+2025-08-29 18:26:49,232 - trading_system.limit_up_analyzer - INFO - 炸板事件: 000001, 评分: 67.18
+2025-08-29 18:26:49,232 - trading_system.limit_up_analyzer - INFO - 炸板事件: 000001, 评分: 67.46
+2025-08-29 18:26:49,233 - trading_system.limit_up_analyzer - INFO - 炸板事件: 000001, 评分: 67.76
+2025-08-29 18:26:49,233 - trading_system - INFO - 场景 normal_limit_up_break: 最高评分 67.76
+2025-08-29 18:26:49,233 - trading_system.limit_up_detector - INFO - 检测到涨停: 000002, 价格: 16.42500, 涨停价: 16.42500
+2025-08-29 18:26:49,234 - trading_system - WARNING - 场景 weak_limit_up: 未检测到炸板事件
+2025-08-29 18:26:49,239 - trading_system.limit_up_detector - INFO - 检测到涨停: 000003, 价格: 21.90000, 涨停价: 21.90000
+2025-08-29 18:26:49,240 - trading_system.limit_up_detector - INFO - 检测到炸板: 000003, 当前价格: 21.57150000
+2025-08-29 18:26:49,240 - trading_system.limit_up_analyzer - INFO - 炸板事件: 000003, 评分: 43.40
+2025-08-29 18:26:49,240 - trading_system - INFO - 场景 strong_limit_up: 最高评分 43.40
+2025-08-29 18:26:49,240 - trading_system - INFO - 评分算法测试成功
+2025-08-29 18:26:49,240 - trading_system - INFO - ✅ 评分算法测试 通过
+2025-08-29 18:26:49,241 - trading_system - INFO - 执行 数据管理功能测试...
+2025-08-29 18:26:49,241 - trading_system - INFO - 开始测试数据管理功能...
+2025-08-29 18:26:49,242 - trading_system.limit_up_analyzer - INFO - 炸板事件: 000001, 评分: 38.80
+2025-08-29 18:26:49,243 - trading_system.limit_up_analyzer - INFO - 炸板事件: 000001, 评分: 39.37
+2025-08-29 18:26:49,243 - trading_system.limit_up_analyzer - INFO - 炸板事件: 000001, 评分: 39.94
+2025-08-29 18:26:49,244 - trading_system.limit_up_analyzer - INFO - 炸板事件: 000001, 评分: 40.51
+2025-08-29 18:26:49,245 - trading_system.limit_up_analyzer - INFO - 炸板事件: 000001, 评分: 41.08
+2025-08-29 18:26:49,245 - trading_system.limit_up_analyzer - INFO - 炸板事件: 000001, 评分: 41.64
+2025-08-29 18:26:49,245 - trading_system.limit_up_analyzer - INFO - 炸板事件: 000001, 评分: 42.20
+2025-08-29 18:26:49,246 - trading_system.limit_up_analyzer - INFO - 炸板事件: 000001, 评分: 42.76
+2025-08-29 18:26:49,246 - trading_system.limit_up_analyzer - INFO - 炸板事件: 000001, 评分: 43.31
+2025-08-29 18:26:49,246 - trading_system.limit_up_analyzer - INFO - 炸板事件: 000001, 评分: 43.87
+2025-08-29 18:26:49,247 - trading_system.limit_up_detector - INFO - 检测到涨停: 000001, 价格: 10.95000, 涨停价: 10.95000
+2025-08-29 18:26:49,247 - trading_system.limit_up_detector - INFO - 检测到炸板: 000001, 当前价格: 10.7310000
+2025-08-29 18:26:49,247 - trading_system.limit_up_analyzer - INFO - 炸板事件: 000001, 评分: 66.85
+2025-08-29 18:26:49,248 - trading_system.limit_up_analyzer - INFO - 炸板事件: 000001, 评分: 67.26
+2025-08-29 18:26:49,248 - trading_system.limit_up_analyzer - INFO - 炸板事件: 000001, 评分: 67.65
+2025-08-29 18:26:49,248 - trading_system - INFO - 统计信息: {'total_stocks': 2, 'total_events': 11, 'avg_score': 49.13967181487374, 'max_score': 67.65338113027711, 'min_score': 40.51158095668457, 'window_size': 300, 'cached_prev_close_count': 3}
+2025-08-29 18:26:49,248 - trading_system - INFO - 股票事件数: 10, 总事件数: 11
+2025-08-29 18:26:49,249 - trading_system - INFO - 数据管理功能测试成功
+2025-08-29 18:26:49,249 - trading_system - INFO - ✅ 数据管理功能测试 通过
+2025-08-29 18:26:49,249 - trading_system - INFO - 测试完成: 3/3 通过
+2025-08-29 18:31:20,271 - trading_system.database_init - INFO - 数据库初始化成功
+2025-08-29 18:31:20,271 - trading_system.stock_filter - INFO - 股票筛选器初始化完成
+2025-08-29 18:31:20,272 - trading_system.stock_sorter - INFO - 股票排序器初始化完成
+2025-08-29 18:31:20,272 - trading_system.stock_recommender - INFO - 股票推荐引擎初始化完成
+2025-08-29 18:31:20,272 - trading_system.stock_filter_manager - INFO - 股票筛选管理器初始化完成
+2025-08-29 18:31:20,273 - trading_system - INFO - 股票筛选机制测试器初始化完成
+2025-08-29 18:31:20,273 - trading_system - INFO - 开始股票筛选机制完整测试
+2025-08-29 18:31:20,273 - trading_system - INFO - 执行 基本筛选功能测试...
+2025-08-29 18:31:20,273 - trading_system - INFO - 开始测试基本筛选功能...
+2025-08-29 18:31:20,273 - trading_system - INFO - 创建测试事件: 6个
+2025-08-29 18:31:20,289 - trading_system.stock_filter - INFO - 筛选完成: 6 -> 5
+2025-08-29 18:31:20,290 - trading_system - INFO - 默认筛选结果: 5个事件
+2025-08-29 18:31:20,290 - trading_system.stock_filter - INFO - 筛选完成: 6 -> 2
+2025-08-29 18:31:20,291 - trading_system - INFO - 自定义筛选结果: 2个事件
+2025-08-29 18:31:20,291 - trading_system - INFO - 基本筛选功能测试成功
+2025-08-29 18:31:20,291 - trading_system - INFO - ✅ 基本筛选功能测试 通过
+2025-08-29 18:31:20,291 - trading_system - INFO - 执行 排序机制测试...
+2025-08-29 18:31:20,292 - trading_system - INFO - 开始测试排序机制...
+2025-08-29 18:31:20,292 - trading_system.stock_sorter - INFO - 排序完成: 6个事件
+2025-08-29 18:31:20,292 - trading_system - INFO - 评分排序测试通过
+2025-08-29 18:31:20,292 - trading_system.stock_sorter - INFO - 排序完成: 6个事件
+2025-08-29 18:31:20,292 - trading_system - INFO - 时间排序测试通过
+2025-08-29 18:31:20,293 - trading_system.stock_sorter - INFO - 排序完成: 6个事件
+2025-08-29 18:31:20,293 - trading_system - INFO - 多字段排序结果: 6个事件
+2025-08-29 18:31:20,293 - trading_system - INFO - 排序机制测试成功
+2025-08-29 18:31:20,293 - trading_system - INFO - ✅ 排序机制测试 通过
+2025-08-29 18:31:20,293 - trading_system - INFO - 执行 推荐引擎测试...
+2025-08-29 18:31:20,293 - trading_system - INFO - 开始测试推荐引擎...
+2025-08-29 18:31:20,294 - trading_system.stock_filter - INFO - 筛选完成: 6 -> 5
+2025-08-29 18:31:20,294 - trading_system.stock_sorter - INFO - 排序完成: 5个事件
+2025-08-29 18:31:20,294 - trading_system.stock_recommender - INFO - 生成推荐完成: 4个股票
+2025-08-29 18:31:20,294 - trading_system.stock_filter_manager - INFO - 获取推荐完成: 4个推荐
+2025-08-29 18:31:20,294 - trading_system - INFO - 生成推荐: 4个股票
+2025-08-29 18:31:20,294 - trading_system - INFO - 推荐1: 000001, 评分=88.51, 风险=low, 置信度=0.78, 理由=高质量炸板信号; 涨停持续时间较长; 炸板成交量活跃; 近期2次炸板事件; 近期炸板信号
+2025-08-29 18:31:20,294 - trading_system - INFO - 推荐2: 000002, 评分=64.30, 风险=medium, 置信度=0.49, 理由=良好炸板信号; 近期炸板信号
+2025-08-29 18:31:20,295 - trading_system - INFO - 推荐3: 000005, 评分=57.70, 风险=high, 置信度=0.67, 理由=炸板成交量活跃; 最新炸板信号
+2025-08-29 18:31:20,295 - trading_system - INFO - 推荐4: 000003, 评分=37.20, 风险=high, 置信度=0.23, 理由=基于炸板分析
+2025-08-29 18:31:20,295 - trading_system - INFO - 推荐引擎测试成功
+2025-08-29 18:31:20,295 - trading_system - INFO - ✅ 推荐引擎测试 通过
+2025-08-29 18:31:20,295 - trading_system - INFO - 执行 预设条件测试...
+2025-08-29 18:31:20,295 - trading_system - INFO - 开始测试预设条件...
+2025-08-29 18:31:20,296 - trading_system - INFO - 可用预设: {'filters': {'names': ['high_quality', 'recent', 'active_trading', 'stable_price'], 'descriptions': {'high_quality': '高质量炸板筛选', 'recent': '最近炸板筛选', 'active_trading': '活跃交易筛选', 'stable_price': '价格稳定筛选'}}, 'sorts': {'names': ['by_score', 'by_time', 'by_volume', 'comprehensive'], 'descriptions': {'by_score': '按评分排序', 'by_time': '按时间排序', 'by_volume': '按成交量排序', 'comprehensive': '综合排序'}}}
+2025-08-29 18:31:20,296 - trading_system.stock_filter - INFO - 筛选完成: 6 -> 2
+2025-08-29 18:31:20,296 - trading_system.stock_sorter - INFO - 排序完成: 2个事件
+2025-08-29 18:31:20,296 - trading_system.stock_recommender - INFO - 生成推荐完成: 1个股票
+2025-08-29 18:31:20,296 - trading_system.stock_filter_manager - INFO - 获取推荐完成: 1个推荐
+2025-08-29 18:31:20,296 - trading_system - INFO - 高质量筛选结果: 1个推荐
+2025-08-29 18:31:20,296 - trading_system.stock_filter - INFO - 筛选完成: 6 -> 4
+2025-08-29 18:31:20,297 - trading_system.stock_sorter - INFO - 排序完成: 4个事件
+2025-08-29 18:31:20,297 - trading_system.stock_recommender - INFO - 生成推荐完成: 3个股票
+2025-08-29 18:31:20,297 - trading_system.stock_filter_manager - INFO - 获取推荐完成: 3个推荐
+2025-08-29 18:31:20,297 - trading_system - INFO - 最近事件筛选结果: 3个推荐
+2025-08-29 18:31:20,297 - trading_system.stock_filter - INFO - 筛选完成: 6 -> 3
+2025-08-29 18:31:20,297 - trading_system.stock_sorter - INFO - 排序完成: 3个事件
+2025-08-29 18:31:20,298 - trading_system.stock_recommender - INFO - 生成推荐完成: 2个股票
+2025-08-29 18:31:20,298 - trading_system.stock_filter_manager - INFO - 获取推荐完成: 2个推荐
+2025-08-29 18:31:20,298 - trading_system - INFO - 活跃交易筛选结果: 2个推荐
+2025-08-29 18:31:20,298 - trading_system.stock_filter - INFO - 筛选完成: 6 -> 5
+2025-08-29 18:31:20,298 - trading_system.stock_sorter - INFO - 排序完成: 5个事件
+2025-08-29 18:31:20,298 - trading_system.stock_recommender - INFO - 生成推荐完成: 4个股票
+2025-08-29 18:31:20,299 - trading_system.stock_filter_manager - INFO - 获取推荐完成: 4个推荐
+2025-08-29 18:31:20,299 - trading_system - INFO - 综合排序结果: 4个推荐
+2025-08-29 18:31:20,299 - trading_system - INFO - 预设条件测试成功
+2025-08-29 18:31:20,299 - trading_system - INFO - ✅ 预设条件测试 通过
+2025-08-29 18:31:20,299 - trading_system - INFO - 测试完成: 4/4 通过
+2025-08-29 18:35:56,097 - trading_system.database_init - INFO - 数据库初始化成功
+2025-08-29 18:35:56,097 - trading_system.incremental_cache - INFO - 增量计算缓存初始化完成
+2025-08-29 18:35:56,097 - trading_system.limit_up_detector - INFO - 涨停炸板检测器初始化完成
+2025-08-29 18:35:56,097 - trading_system.limit_up_scorer - INFO - 涨停炸板评分器初始化完成
+2025-08-29 18:35:56,098 - trading_system.limit_up_analyzer - INFO - 涨停炸板分析器初始化完成
+2025-08-29 18:35:56,098 - trading_system.stock_filter - INFO - 股票筛选器初始化完成
+2025-08-29 18:35:56,098 - trading_system.stock_sorter - INFO - 股票排序器初始化完成
+2025-08-29 18:35:56,098 - trading_system.stock_recommender - INFO - 股票推荐引擎初始化完成
+2025-08-29 18:35:56,098 - trading_system.stock_filter_manager - INFO - 股票筛选管理器初始化完成
+2025-08-29 18:35:56,098 - trading_system.realtime_engine - INFO - 实时计算引擎初始化完成
+2025-08-29 18:35:56,098 - trading_system - INFO - 实时计算引擎测试器初始化完成
+2025-08-29 18:35:56,098 - trading_system - INFO - 开始实时计算引擎完整测试
+2025-08-29 18:35:56,099 - trading_system - INFO - 执行 引擎生命周期测试...
+2025-08-29 18:35:56,099 - trading_system - INFO - 开始测试引擎生命周期...
+2025-08-29 18:35:56,099 - trading_system.realtime_engine - INFO - 启动实时计算引擎...
+2025-08-29 18:35:56,099 - trading_system.incremental_cache - INFO - 增量计算缓存已启动
+2025-08-29 18:35:56,099 - trading_system.realtime_engine - INFO - 实时计算引擎启动成功，工作线程数: 2
+2025-08-29 18:35:56,099 - trading_system - INFO - 引擎启动成功
+2025-08-29 18:35:58,107 - trading_system - INFO - 引擎状态检查通过
+2025-08-29 18:35:58,107 - trading_system.realtime_engine - INFO - 停止实时计算引擎...
+2025-08-29 18:35:58,107 - trading_system.incremental_cache - INFO - 增量计算缓存已停止
+2025-08-29 18:35:58,108 - trading_system.realtime_engine - INFO - 实时计算引擎已停止
+2025-08-29 18:35:58,108 - trading_system - INFO - 引擎生命周期测试成功
+2025-08-29 18:35:58,108 - trading_system - INFO - ✅ 引擎生命周期测试 通过
+2025-08-29 18:35:59,123 - trading_system - INFO - 执行 市场数据处理测试...
+2025-08-29 18:35:59,124 - trading_system - INFO - 开始测试市场数据处理...
+2025-08-29 18:35:59,124 - trading_system.realtime_engine - INFO - 启动实时计算引擎...
+2025-08-29 18:35:59,124 - trading_system.incremental_cache - INFO - 增量计算缓存已启动
+2025-08-29 18:35:59,125 - trading_system.realtime_engine - INFO - 实时计算引擎启动成功，工作线程数: 2
+2025-08-29 18:35:59,134 - trading_system - INFO - 提交处理任务: 33个
+2025-08-29 18:35:59,134 - trading_system.realtime_engine - ERROR - 分析快照任务失败: cannot schedule new futures after shutdown
+2025-08-29 18:35:59,135 - trading_system.realtime_engine - ERROR - 分析快照任务失败: cannot schedule new futures after shutdown
+2025-08-29 18:35:59,135 - trading_system.realtime_engine - ERROR - 分析快照任务失败: cannot schedule new futures after shutdown
+2025-08-29 18:35:59,135 - trading_system.realtime_engine - ERROR - 分析快照任务失败: cannot schedule new futures after shutdown
+2025-08-29 18:35:59,136 - trading_system.realtime_engine - ERROR - 分析快照任务失败: cannot schedule new futures after shutdown
+2025-08-29 18:35:59,136 - trading_system.realtime_engine - ERROR - 分析快照任务失败: cannot schedule new futures after shutdown
+2025-08-29 18:35:59,136 - trading_system.realtime_engine - ERROR - 分析快照任务失败: cannot schedule new futures after shutdown
+2025-08-29 18:35:59,136 - trading_system.realtime_engine - ERROR - 分析快照任务失败: cannot schedule new futures after shutdown
+2025-08-29 18:35:59,136 - trading_system.realtime_engine - ERROR - 分析快照任务失败: cannot schedule new futures after shutdown
+2025-08-29 18:35:59,136 - trading_system.realtime_engine - ERROR - 分析快照任务失败: cannot schedule new futures after shutdown
+2025-08-29 18:35:59,137 - trading_system.realtime_engine - ERROR - 分析快照任务失败: cannot schedule new futures after shutdown
+2025-08-29 18:35:59,137 - trading_system.realtime_engine - ERROR - 分析快照任务失败: cannot schedule new futures after shutdown
+2025-08-29 18:35:59,137 - trading_system.realtime_engine - ERROR - 分析快照任务失败: cannot schedule new futures after shutdown
+2025-08-29 18:35:59,137 - trading_system.realtime_engine - ERROR - 分析快照任务失败: cannot schedule new futures after shutdown
+2025-08-29 18:35:59,137 - trading_system.realtime_engine - ERROR - 分析快照任务失败: cannot schedule new futures after shutdown
+2025-08-29 18:35:59,137 - trading_system.realtime_engine - ERROR - 分析快照任务失败: cannot schedule new futures after shutdown
+2025-08-29 18:35:59,137 - trading_system.realtime_engine - ERROR - 分析快照任务失败: cannot schedule new futures after shutdown
+2025-08-29 18:35:59,137 - trading_system.realtime_engine - ERROR - 分析快照任务失败: cannot schedule new futures after shutdown
+2025-08-29 18:35:59,138 - trading_system.realtime_engine - ERROR - 分析快照任务失败: cannot schedule new futures after shutdown
+2025-08-29 18:35:59,138 - trading_system.realtime_engine - ERROR - 分析快照任务失败: cannot schedule new futures after shutdown
+2025-08-29 18:35:59,138 - trading_system.realtime_engine - ERROR - 分析快照任务失败: cannot schedule new futures after shutdown
+2025-08-29 18:35:59,138 - trading_system.realtime_engine - ERROR - 分析快照任务失败: cannot schedule new futures after shutdown
+2025-08-29 18:35:59,138 - trading_system.realtime_engine - ERROR - 分析快照任务失败: cannot schedule new futures after shutdown
+2025-08-29 18:35:59,138 - trading_system.realtime_engine - ERROR - 分析快照任务失败: cannot schedule new futures after shutdown
+2025-08-29 18:35:59,138 - trading_system.realtime_engine - ERROR - 分析快照任务失败: cannot schedule new futures after shutdown
+2025-08-29 18:35:59,139 - trading_system.realtime_engine - ERROR - 分析快照任务失败: cannot schedule new futures after shutdown
+2025-08-29 18:35:59,139 - trading_system.realtime_engine - ERROR - 分析快照任务失败: cannot schedule new futures after shutdown
+2025-08-29 18:35:59,139 - trading_system.realtime_engine - ERROR - 分析快照任务失败: cannot schedule new futures after shutdown
+2025-08-29 18:35:59,139 - trading_system.realtime_engine - ERROR - 分析快照任务失败: cannot schedule new futures after shutdown
+2025-08-29 18:35:59,140 - trading_system.realtime_engine - ERROR - 分析快照任务失败: cannot schedule new futures after shutdown
+2025-08-29 18:35:59,140 - trading_system.realtime_engine - ERROR - 分析快照任务失败: cannot schedule new futures after shutdown
+2025-08-29 18:35:59,141 - trading_system.realtime_engine - ERROR - 分析快照任务失败: cannot schedule new futures after shutdown
+2025-08-29 18:35:59,141 - trading_system.realtime_engine - ERROR - 分析快照任务失败: cannot schedule new futures after shutdown
+2025-08-29 18:36:09,144 - trading_system - INFO - 收到处理结果: 0个
+2025-08-29 18:36:09,145 - trading_system - INFO - 引擎统计: {'engine_stats': {'total_tasks': 33, 'completed_tasks': 0, 'failed_tasks': 33, 'avg_compute_time': 0.0, 'queue_size': 0, 'active_workers': 0, 'is_running': True}, 'cache_stats': {'cache_size': 0, 'max_cache_size': 1000, 'hits': 0, 'misses': 33, 'hit_rate': 0.0, 'incremental_keys': 0}, 'analyzer_stats': {'total_stocks': 0, 'total_events': 0, 'avg_score': 0.0, 'max_score': 0.0, 'min_score': 0.0, 'window_size': 300, 'cached_prev_close_count': 3}}
+2025-08-29 18:36:09,145 - trading_system.realtime_engine - INFO - 停止实时计算引擎...
+2025-08-29 18:36:09,146 - trading_system.incremental_cache - INFO - 增量计算缓存已停止
+2025-08-29 18:36:09,146 - trading_system.realtime_engine - INFO - 实时计算引擎已停止
+2025-08-29 18:36:09,146 - trading_system - WARNING - 未收到处理结果，但功能正常
+2025-08-29 18:36:09,146 - trading_system - INFO - ✅ 市场数据处理测试 通过
+2025-08-29 18:36:10,150 - trading_system - INFO - 执行 缓存性能测试...
+2025-08-29 18:36:10,151 - trading_system - INFO - 开始测试缓存性能...
+2025-08-29 18:36:10,151 - trading_system.realtime_engine - INFO - 启动实时计算引擎...
+2025-08-29 18:36:10,151 - trading_system.incremental_cache - INFO - 增量计算缓存已启动
+2025-08-29 18:36:10,151 - trading_system.realtime_engine - INFO - 实时计算引擎启动成功，工作线程数: 2
+2025-08-29 18:36:10,152 - trading_system - INFO - 第一轮处理（缓存未命中）...
+2025-08-29 18:36:10,152 - trading_system.realtime_engine - ERROR - 分析快照任务失败: cannot schedule new futures after shutdown
+2025-08-29 18:36:10,152 - trading_system.realtime_engine - ERROR - 分析快照任务失败: cannot schedule new futures after shutdown
+2025-08-29 18:36:10,152 - trading_system.realtime_engine - ERROR - 分析快照任务失败: cannot schedule new futures after shutdown
+2025-08-29 18:36:10,153 - trading_system.realtime_engine - ERROR - 分析快照任务失败: cannot schedule new futures after shutdown
+2025-08-29 18:36:10,153 - trading_system.realtime_engine - ERROR - 分析快照任务失败: cannot schedule new futures after shutdown
+2025-08-29 18:36:13,154 - trading_system - INFO - 第二轮处理（缓存命中）...
+2025-08-29 18:36:13,155 - trading_system.realtime_engine - ERROR - 分析快照任务失败: cannot schedule new futures after shutdown
+2025-08-29 18:36:13,155 - trading_system.realtime_engine - ERROR - 分析快照任务失败: cannot schedule new futures after shutdown
+2025-08-29 18:36:13,155 - trading_system.realtime_engine - ERROR - 分析快照任务失败: cannot schedule new futures after shutdown
+2025-08-29 18:36:13,155 - trading_system.realtime_engine - ERROR - 分析快照任务失败: cannot schedule new futures after shutdown
+2025-08-29 18:36:13,155 - trading_system.realtime_engine - ERROR - 分析快照任务失败: cannot schedule new futures after shutdown
+2025-08-29 18:36:16,166 - trading_system - INFO - 第一轮耗时: 3.00秒
+2025-08-29 18:36:16,167 - trading_system - INFO - 第二轮耗时: 3.01秒
+2025-08-29 18:36:16,167 - trading_system - INFO - 缓存命中率: 0.00%
+2025-08-29 18:36:16,168 - trading_system.realtime_engine - INFO - 停止实时计算引擎...
+2025-08-29 18:36:16,168 - trading_system.incremental_cache - INFO - 增量计算缓存已停止
+2025-08-29 18:36:16,168 - trading_system.realtime_engine - INFO - 实时计算引擎已停止
+2025-08-29 18:36:16,168 - trading_system - WARNING - 缓存未生效，但功能正常
+2025-08-29 18:36:16,168 - trading_system - INFO - ✅ 缓存性能测试 通过
+2025-08-29 18:36:17,176 - trading_system - INFO - 执行 推荐生成测试...
+2025-08-29 18:36:17,176 - trading_system - INFO - 开始测试推荐生成...
+2025-08-29 18:36:17,177 - trading_system.realtime_engine - INFO - 启动实时计算引擎...
+2025-08-29 18:36:17,177 - trading_system.incremental_cache - INFO - 增量计算缓存已启动
+2025-08-29 18:36:17,177 - trading_system.realtime_engine - INFO - 实时计算引擎启动成功，工作线程数: 2
+2025-08-29 18:36:17,178 - trading_system.realtime_engine - ERROR - 分析快照任务失败: cannot schedule new futures after shutdown
+2025-08-29 18:36:17,178 - trading_system.realtime_engine - ERROR - 分析快照任务失败: cannot schedule new futures after shutdown
+2025-08-29 18:36:17,178 - trading_system.realtime_engine - ERROR - 分析快照任务失败: cannot schedule new futures after shutdown
+2025-08-29 18:36:17,178 - trading_system.realtime_engine - ERROR - 分析快照任务失败: cannot schedule new futures after shutdown
+2025-08-29 18:36:17,179 - trading_system.realtime_engine - ERROR - 分析快照任务失败: cannot schedule new futures after shutdown
+2025-08-29 18:36:17,179 - trading_system.realtime_engine - ERROR - 分析快照任务失败: cannot schedule new futures after shutdown
+2025-08-29 18:36:17,179 - trading_system.realtime_engine - ERROR - 分析快照任务失败: cannot schedule new futures after shutdown
+2025-08-29 18:36:17,179 - trading_system.realtime_engine - ERROR - 分析快照任务失败: cannot schedule new futures after shutdown
+2025-08-29 18:36:17,179 - trading_system.realtime_engine - ERROR - 分析快照任务失败: cannot schedule new futures after shutdown
+2025-08-29 18:36:17,180 - trading_system.realtime_engine - ERROR - 分析快照任务失败: cannot schedule new futures after shutdown
+2025-08-29 18:36:17,180 - trading_system.realtime_engine - ERROR - 分析快照任务失败: cannot schedule new futures after shutdown
+2025-08-29 18:36:17,180 - trading_system.realtime_engine - ERROR - 分析快照任务失败: cannot schedule new futures after shutdown
+2025-08-29 18:36:17,180 - trading_system.realtime_engine - ERROR - 分析快照任务失败: cannot schedule new futures after shutdown
+2025-08-29 18:36:17,180 - trading_system.realtime_engine - ERROR - 分析快照任务失败: cannot schedule new futures after shutdown
+2025-08-29 18:36:17,180 - trading_system.realtime_engine - ERROR - 分析快照任务失败: cannot schedule new futures after shutdown
+2025-08-29 18:36:17,180 - trading_system.realtime_engine - ERROR - 分析快照任务失败: cannot schedule new futures after shutdown
+2025-08-29 18:36:17,181 - trading_system.realtime_engine - ERROR - 分析快照任务失败: cannot schedule new futures after shutdown
+2025-08-29 18:36:17,181 - trading_system.realtime_engine - ERROR - 分析快照任务失败: cannot schedule new futures after shutdown
+2025-08-29 18:36:17,181 - trading_system.realtime_engine - ERROR - 分析快照任务失败: cannot schedule new futures after shutdown
+2025-08-29 18:36:17,181 - trading_system.realtime_engine - ERROR - 分析快照任务失败: cannot schedule new futures after shutdown
+2025-08-29 18:36:17,181 - trading_system.realtime_engine - ERROR - 分析快照任务失败: cannot schedule new futures after shutdown
+2025-08-29 18:36:17,181 - trading_system.realtime_engine - ERROR - 分析快照任务失败: cannot schedule new futures after shutdown
+2025-08-29 18:36:17,181 - trading_system.realtime_engine - ERROR - 分析快照任务失败: cannot schedule new futures after shutdown
+2025-08-29 18:36:17,182 - trading_system.realtime_engine - ERROR - 分析快照任务失败: cannot schedule new futures after shutdown
+2025-08-29 18:36:17,182 - trading_system.realtime_engine - ERROR - 分析快照任务失败: cannot schedule new futures after shutdown
+2025-08-29 18:36:17,182 - trading_system.realtime_engine - ERROR - 分析快照任务失败: cannot schedule new futures after shutdown
+2025-08-29 18:36:17,182 - trading_system.realtime_engine - ERROR - 分析快照任务失败: cannot schedule new futures after shutdown
+2025-08-29 18:36:17,182 - trading_system.realtime_engine - ERROR - 分析快照任务失败: cannot schedule new futures after shutdown
+2025-08-29 18:36:17,182 - trading_system.realtime_engine - ERROR - 分析快照任务失败: cannot schedule new futures after shutdown
+2025-08-29 18:36:17,183 - trading_system.realtime_engine - ERROR - 分析快照任务失败: cannot schedule new futures after shutdown
+2025-08-29 18:36:17,183 - trading_system.realtime_engine - ERROR - 分析快照任务失败: cannot schedule new futures after shutdown
+2025-08-29 18:36:17,183 - trading_system.realtime_engine - ERROR - 分析快照任务失败: cannot schedule new futures after shutdown
+2025-08-29 18:36:17,183 - trading_system.realtime_engine - ERROR - 分析快照任务失败: cannot schedule new futures after shutdown
+2025-08-29 18:36:22,179 - trading_system - INFO - 生成推荐: 0个
+2025-08-29 18:36:22,180 - trading_system.realtime_engine - INFO - 停止实时计算引擎...
+2025-08-29 18:36:22,180 - trading_system.incremental_cache - INFO - 增量计算缓存已停止
+2025-08-29 18:36:22,181 - trading_system.realtime_engine - INFO - 实时计算引擎已停止
+2025-08-29 18:36:22,181 - trading_system - INFO - 推荐生成测试成功
+2025-08-29 18:36:22,181 - trading_system - INFO - ✅ 推荐生成测试 通过
+2025-08-29 18:36:23,185 - trading_system - INFO - 测试完成: 4/4 通过
+2025-08-29 18:40:30,134 - trading_system.database_init - INFO - 数据库初始化成功
+2025-08-29 18:40:30,134 - trading_system.trading_service - INFO - 数据库初始化成功
+2025-08-29 18:40:30,134 - trading_system.trading_service - INFO - 量化交易系统服务初始化完成
+2025-08-29 18:40:30,134 - trading_system - INFO - 交易系统服务测试器初始化完成
+2025-08-29 18:40:30,134 - trading_system - INFO - 开始交易系统服务完整测试
+2025-08-29 18:40:30,134 - trading_system - INFO - 执行 服务生命周期测试...
+2025-08-29 18:40:30,135 - trading_system - INFO - 开始测试服务生命周期...
+2025-08-29 18:40:30,135 - trading_system.trading_service - INFO - 启动量化交易系统...
+2025-08-29 18:40:30,135 - trading_system.level2_service - INFO - Level2数据服务初始化完成
+2025-08-29 18:40:30,135 - trading_system.incremental_cache - INFO - 增量计算缓存初始化完成
+2025-08-29 18:40:30,135 - trading_system.limit_up_detector - INFO - 涨停炸板检测器初始化完成
+2025-08-29 18:40:30,135 - trading_system.limit_up_scorer - INFO - 涨停炸板评分器初始化完成
+2025-08-29 18:40:30,135 - trading_system.limit_up_analyzer - INFO - 涨停炸板分析器初始化完成
+2025-08-29 18:40:30,135 - trading_system.stock_filter - INFO - 股票筛选器初始化完成
+2025-08-29 18:40:30,136 - trading_system.stock_sorter - INFO - 股票排序器初始化完成
+2025-08-29 18:40:30,136 - trading_system.stock_recommender - INFO - 股票推荐引擎初始化完成
+2025-08-29 18:40:30,136 - trading_system.stock_filter_manager - INFO - 股票筛选管理器初始化完成
+2025-08-29 18:40:30,136 - trading_system.realtime_engine - INFO - 实时计算引擎初始化完成
+2025-08-29 18:40:30,136 - trading_system.realtime_engine - INFO - 启动实时计算引擎...
+2025-08-29 18:40:30,136 - trading_system.incremental_cache - INFO - 增量计算缓存已启动
+2025-08-29 18:40:30,137 - trading_system.realtime_engine - INFO - 实时计算引擎启动成功，工作线程数: 4
+2025-08-29 18:40:30,155 - trading_system.level2_service - INFO - 初始化Level2数据服务组件...
+2025-08-29 18:40:30,155 - trading_system.mock_level2_receiver - INFO - 模拟Level2数据接收器初始化完成
+2025-08-29 18:40:30,155 - trading_system.level2_service - INFO - Level2数据接收器创建成功
+2025-08-29 18:40:43,224 - trading_system.redis_cache - WARNING - Redis缓存连接失败: Authentication required.，将使用内存缓存
+2025-08-29 18:40:43,224 - trading_system.realtime_processor - INFO - 实时数据处理器初始化完成
+2025-08-29 18:40:43,224 - trading_system.level2_service - INFO - 实时数据处理器创建成功
+2025-08-29 18:40:43,225 - trading_system.connection_manager - INFO - 连接管理器初始化完成
+2025-08-29 18:40:43,225 - trading_system.level2_service - INFO - 连接管理器创建成功
+2025-08-29 18:40:43,225 - trading_system.connection_manager - INFO - 连接实例已设置
+2025-08-29 18:40:43,225 - trading_system.level2_service - INFO - Level2数据服务组件初始化完成
+2025-08-29 18:40:43,225 - trading_system.level2_service - INFO - 启动Level2数据服务...
+2025-08-29 18:40:43,226 - trading_system.realtime_processor - INFO - 启动实时数据处理器...
+2025-08-29 18:40:43,226 - trading_system.realtime_processor - INFO - 实时数据处理器启动成功，工作线程数: 4
+2025-08-29 18:40:43,226 - trading_system.connection_manager - INFO - 启动连接监控...
+2025-08-29 18:40:43,226 - trading_system.connection_manager - INFO - 健康检查已启动
+2025-08-29 18:40:43,226 - trading_system.connection_manager - INFO - 质量监控已启动
+2025-08-29 18:40:43,226 - trading_system.connection_manager - INFO - 连接监控启动成功
+2025-08-29 18:40:43,226 - trading_system.mock_level2_receiver - INFO - 启动模拟Level2数据接收器...
+2025-08-29 18:40:44,227 - trading_system.mock_level2_receiver - INFO - 模拟连接成功
+2025-08-29 18:40:45,228 - trading_system.mock_level2_receiver - INFO - 模拟登录成功
+2025-08-29 18:40:45,228 - trading_system.mock_level2_receiver - INFO - 开始生成模拟数据...
+2025-08-29 18:40:45,228 - trading_system.mock_level2_receiver - INFO - 模拟Level2数据接收器启动成功
+2025-08-29 18:40:45,236 - trading_system.level2_service - INFO - Level2数据服务启动成功
+2025-08-29 18:40:45,237 - trading_system.trading_service - INFO - 量化交易系统启动成功
+2025-08-29 18:40:45,237 - trading_system - INFO - 服务启动成功
+2025-08-29 18:40:45,238 - trading_system.mock_level2_receiver - ERROR - 快照行情回调失败: no running event loop
+2025-08-29 18:40:45,686 - trading_system.mock_level2_receiver - ERROR - 快照行情回调失败: no running event loop
+2025-08-29 18:40:46,512 - trading_system.mock_level2_receiver - ERROR - 快照行情回调失败: no running event loop
+2025-08-29 18:40:46,814 - trading_system.mock_level2_receiver - ERROR - 快照行情回调失败: no running event loop
+2025-08-29 18:40:47,326 - trading_system.mock_level2_receiver - ERROR - 快照行情回调失败: no running event loop
+2025-08-29 18:40:47,328 - trading_system.mock_level2_receiver - ERROR - 逐笔成交回调失败: no running event loop
+2025-08-29 18:40:47,782 - trading_system.mock_level2_receiver - ERROR - 快照行情回调失败: no running event loop
+2025-08-29 18:40:48,243 - trading_system.trading_service - INFO - 停止量化交易系统...
+2025-08-29 18:40:48,243 - trading_system.level2_service - INFO - 停止Level2数据服务...
+2025-08-29 18:40:48,243 - trading_system.mock_level2_receiver - INFO - 停止模拟Level2数据接收器...
+2025-08-29 18:40:48,736 - trading_system.mock_level2_receiver - INFO - 模拟Level2数据接收器已停止
+2025-08-29 18:40:48,736 - trading_system.level2_service - INFO - Level2数据接收器已停止
+2025-08-29 18:40:48,736 - trading_system.connection_manager - INFO - 停止连接监控...
+2025-08-29 18:40:48,737 - trading_system.connection_manager - INFO - 连接监控已停止
+2025-08-29 18:40:48,737 - trading_system.level2_service - INFO - 连接监控已停止
+2025-08-29 18:40:48,737 - trading_system.realtime_processor - INFO - 停止实时数据处理器...
+2025-08-29 18:41:15,251 - trading_system.realtime_engine - INFO - 引擎统计 - 总任务: 0, 完成: 0, 失败: 0, 队列: 0, 平均耗时: 0.0000s
+2025-08-29 18:41:15,252 - trading_system.realtime_engine - INFO - 缓存统计 - 大小: 0, 命中率: 0.00%
+2025-08-29 18:41:15,252 - trading_system.realtime_processor - INFO - 性能监控 - 总处理: 0, 平均耗时: 0.0000s, 缓冲区: 0, 错误: 0
+2025-08-29 18:41:15,253 - trading_system.realtime_processor - INFO - 实时数据处理器已停止
+2025-08-29 18:41:15,254 - trading_system.level2_service - INFO - 实时数据处理器已停止
+2025-08-29 18:41:15,254 - trading_system.level2_service - INFO - Level2数据服务已停止
+2025-08-29 18:41:15,254 - trading_system.realtime_engine - INFO - 停止实时计算引擎...
+2025-08-29 18:41:15,255 - trading_system.incremental_cache - INFO - 增量计算缓存已停止
+2025-08-29 18:41:15,255 - trading_system.realtime_engine - INFO - 实时计算引擎已停止
+2025-08-29 18:41:15,255 - trading_system.trading_service - INFO - 量化交易系统已停止
+2025-08-29 18:41:15,255 - trading_system - INFO - 服务停止成功
+2025-08-29 18:41:15,255 - trading_system - INFO - 服务生命周期测试成功
+2025-08-29 18:41:15,255 - trading_system - INFO - ✅ 服务生命周期测试 通过
+2025-08-29 18:41:17,271 - trading_system - INFO - 执行 数据订阅功能测试...
+2025-08-29 18:41:17,271 - trading_system - INFO - 开始测试数据订阅功能...
+2025-08-29 18:41:17,271 - trading_system.trading_service - INFO - 启动量化交易系统...
+2025-08-29 18:41:17,272 - trading_system.level2_service - INFO - Level2数据服务初始化完成
+2025-08-29 18:41:17,272 - trading_system.incremental_cache - INFO - 增量计算缓存初始化完成
+2025-08-29 18:41:17,273 - trading_system.limit_up_detector - INFO - 涨停炸板检测器初始化完成
+2025-08-29 18:41:17,273 - trading_system.limit_up_scorer - INFO - 涨停炸板评分器初始化完成
+2025-08-29 18:41:17,274 - trading_system.limit_up_analyzer - INFO - 涨停炸板分析器初始化完成
+2025-08-29 18:41:17,274 - trading_system.stock_filter - INFO - 股票筛选器初始化完成
+2025-08-29 18:41:17,274 - trading_system.stock_sorter - INFO - 股票排序器初始化完成
+2025-08-29 18:41:17,274 - trading_system.stock_recommender - INFO - 股票推荐引擎初始化完成
+2025-08-29 18:41:17,274 - trading_system.stock_filter_manager - INFO - 股票筛选管理器初始化完成
+2025-08-29 18:41:17,274 - trading_system.realtime_engine - INFO - 实时计算引擎初始化完成
+2025-08-29 18:41:17,275 - trading_system.realtime_engine - INFO - 启动实时计算引擎...
+2025-08-29 18:41:17,275 - trading_system.incremental_cache - INFO - 增量计算缓存已启动
+2025-08-29 18:41:17,275 - trading_system.realtime_engine - INFO - 实时计算引擎启动成功，工作线程数: 4
+2025-08-29 18:41:17,276 - trading_system.level2_service - INFO - 初始化Level2数据服务组件...
+2025-08-29 18:41:17,276 - trading_system.mock_level2_receiver - INFO - 模拟Level2数据接收器初始化完成
+2025-08-29 18:41:17,276 - trading_system.level2_service - INFO - Level2数据接收器创建成功
+2025-08-29 18:41:28,070 - trading_system.redis_cache - WARNING - Redis缓存连接失败: Authentication required.，将使用内存缓存
+2025-08-29 18:41:28,071 - trading_system.realtime_processor - INFO - 实时数据处理器初始化完成
+2025-08-29 18:41:28,071 - trading_system.level2_service - INFO - 实时数据处理器创建成功
+2025-08-29 18:41:28,071 - trading_system.connection_manager - INFO - 连接管理器初始化完成
+2025-08-29 18:41:28,071 - trading_system.level2_service - INFO - 连接管理器创建成功
+2025-08-29 18:41:28,072 - trading_system.connection_manager - INFO - 连接实例已设置
+2025-08-29 18:41:28,072 - trading_system.level2_service - INFO - Level2数据服务组件初始化完成
+2025-08-29 18:41:28,072 - trading_system.level2_service - INFO - 启动Level2数据服务...
+2025-08-29 18:41:28,072 - trading_system.realtime_processor - INFO - 启动实时数据处理器...
+2025-08-29 18:41:28,073 - trading_system.realtime_processor - INFO - 实时数据处理器启动成功，工作线程数: 4
+2025-08-29 18:41:28,073 - trading_system.connection_manager - INFO - 启动连接监控...
+2025-08-29 18:41:28,073 - trading_system.connection_manager - INFO - 健康检查已启动
+2025-08-29 18:41:28,073 - trading_system.connection_manager - INFO - 质量监控已启动
+2025-08-29 18:41:28,073 - trading_system.connection_manager - INFO - 连接监控启动成功
+2025-08-29 18:41:28,074 - trading_system.mock_level2_receiver - INFO - 启动模拟Level2数据接收器...
+2025-08-29 18:41:29,074 - trading_system.mock_level2_receiver - INFO - 模拟连接成功
+2025-08-29 18:41:30,075 - trading_system.mock_level2_receiver - INFO - 模拟登录成功
+2025-08-29 18:41:30,076 - trading_system.mock_level2_receiver - INFO - 开始生成模拟数据...
+2025-08-29 18:41:30,076 - trading_system.mock_level2_receiver - INFO - 模拟Level2数据接收器启动成功
+2025-08-29 18:41:30,077 - trading_system.level2_service - INFO - Level2数据服务启动成功
+2025-08-29 18:41:30,077 - trading_system.trading_service - INFO - 量化交易系统启动成功
+2025-08-29 18:41:30,077 - trading_system.mock_level2_receiver - ERROR - 逐笔委托回调失败: no running event loop
+2025-08-29 18:41:30,077 - trading_system.mock_level2_receiver - INFO - 模拟订阅快照行情: ['000001', '000002', '600000', '600036', '600519'] @ COMM
+2025-08-29 18:41:30,078 - trading_system.mock_level2_receiver - INFO - 模拟订阅逐笔成交: ['000001', '000002', '600000', '600036', '600519'] @ SZSE
+2025-08-29 18:41:30,078 - trading_system.mock_level2_receiver - INFO - 模拟订阅逐笔委托: ['000001', '000002', '600000', '600036', '600519'] @ SZSE
+2025-08-29 18:41:30,078 - trading_system - INFO - 股票数据订阅成功: ['000001', '000002', '600000', '600036', '600519']
+2025-08-29 18:41:30,888 - trading_system.mock_level2_receiver - ERROR - 快照行情回调失败: no running event loop
+2025-08-29 18:41:30,889 - trading_system.mock_level2_receiver - ERROR - 逐笔委托回调失败: no running event loop
+2025-08-29 18:41:31,214 - trading_system.mock_level2_receiver - ERROR - 快照行情回调失败: no running event loop
+2025-08-29 18:41:32,076 - trading_system.mock_level2_receiver - ERROR - 快照行情回调失败: no running event loop
+2025-08-29 18:41:32,077 - trading_system.mock_level2_receiver - ERROR - 逐笔成交回调失败: no running event loop
+2025-08-29 18:41:32,976 - trading_system.mock_level2_receiver - ERROR - 逐笔成交回调失败: no running event loop
+2025-08-29 18:41:32,980 - trading_system.mock_level2_receiver - ERROR - 逐笔委托回调失败: no running event loop
+2025-08-29 18:41:33,431 - trading_system.mock_level2_receiver - ERROR - 快照行情回调失败: no running event loop
+2025-08-29 18:41:33,432 - trading_system.mock_level2_receiver - ERROR - 逐笔成交回调失败: no running event loop
+2025-08-29 18:41:34,085 - trading_system.mock_level2_receiver - ERROR - 快照行情回调失败: no running event loop
+2025-08-29 18:41:34,462 - trading_system.mock_level2_receiver - ERROR - 快照行情回调失败: no running event loop
+2025-08-29 18:41:34,463 - trading_system.mock_level2_receiver - ERROR - 逐笔成交回调失败: no running event loop
+2025-08-29 18:41:35,094 - trading_system.trading_service - INFO - 停止量化交易系统...
+2025-08-29 18:41:35,095 - trading_system.level2_service - INFO - 停止Level2数据服务...
+2025-08-29 18:41:35,095 - trading_system.mock_level2_receiver - INFO - 停止模拟Level2数据接收器...
+2025-08-29 18:41:35,149 - trading_system.mock_level2_receiver - INFO - 模拟Level2数据接收器已停止
+2025-08-29 18:41:35,150 - trading_system.level2_service - INFO - Level2数据接收器已停止
+2025-08-29 18:41:35,150 - trading_system.connection_manager - INFO - 停止连接监控...
+2025-08-29 18:41:35,151 - trading_system.connection_manager - INFO - 连接监控已停止
+2025-08-29 18:41:35,151 - trading_system.level2_service - INFO - 连接监控已停止
+2025-08-29 18:41:35,151 - trading_system.realtime_processor - INFO - 停止实时数据处理器...
+2025-08-29 18:42:00,091 - trading_system.realtime_engine - INFO - 引擎统计 - 总任务: 0, 完成: 0, 失败: 0, 队列: 0, 平均耗时: 0.0000s
+2025-08-29 18:42:00,091 - trading_system.realtime_engine - INFO - 缓存统计 - 大小: 0, 命中率: 0.00%
+2025-08-29 18:42:00,092 - trading_system.realtime_processor - INFO - 性能监控 - 总处理: 0, 平均耗时: 0.0000s, 缓冲区: 0, 错误: 0
+2025-08-29 18:42:00,092 - trading_system.realtime_processor - INFO - 实时数据处理器已停止
+2025-08-29 18:42:00,092 - trading_system.level2_service - INFO - 实时数据处理器已停止
+2025-08-29 18:42:00,092 - trading_system.level2_service - INFO - Level2数据服务已停止
+2025-08-29 18:42:00,092 - trading_system.realtime_engine - INFO - 停止实时计算引擎...
+2025-08-29 18:42:00,093 - trading_system.incremental_cache - INFO - 增量计算缓存已停止
+2025-08-29 18:42:00,093 - trading_system.realtime_engine - INFO - 实时计算引擎已停止
+2025-08-29 18:42:00,093 - trading_system.trading_service - INFO - 量化交易系统已停止
+2025-08-29 18:42:00,093 - trading_system - INFO - 数据订阅功能测试成功
+2025-08-29 18:42:00,093 - trading_system - INFO - ✅ 数据订阅功能测试 通过
+2025-08-29 18:42:02,094 - trading_system - INFO - 执行 事件处理功能测试...
+2025-08-29 18:42:02,094 - trading_system - INFO - 开始测试事件处理功能...
+2025-08-29 18:42:02,095 - trading_system.trading_service - INFO - 启动量化交易系统...
+2025-08-29 18:42:02,095 - trading_system.level2_service - INFO - Level2数据服务初始化完成
+2025-08-29 18:42:02,095 - trading_system.incremental_cache - INFO - 增量计算缓存初始化完成
+2025-08-29 18:42:02,095 - trading_system.limit_up_detector - INFO - 涨停炸板检测器初始化完成
+2025-08-29 18:42:02,095 - trading_system.limit_up_scorer - INFO - 涨停炸板评分器初始化完成
+2025-08-29 18:42:02,095 - trading_system.limit_up_analyzer - INFO - 涨停炸板分析器初始化完成
+2025-08-29 18:42:02,096 - trading_system.stock_filter - INFO - 股票筛选器初始化完成
+2025-08-29 18:42:02,096 - trading_system.stock_sorter - INFO - 股票排序器初始化完成
+2025-08-29 18:42:02,096 - trading_system.stock_recommender - INFO - 股票推荐引擎初始化完成
+2025-08-29 18:42:02,096 - trading_system.stock_filter_manager - INFO - 股票筛选管理器初始化完成
+2025-08-29 18:42:02,096 - trading_system.realtime_engine - INFO - 实时计算引擎初始化完成
+2025-08-29 18:42:02,096 - trading_system.realtime_engine - INFO - 启动实时计算引擎...
+2025-08-29 18:42:02,097 - trading_system.incremental_cache - INFO - 增量计算缓存已启动
+2025-08-29 18:42:02,097 - trading_system.realtime_engine - INFO - 实时计算引擎启动成功，工作线程数: 4
+2025-08-29 18:42:02,097 - trading_system.level2_service - INFO - 初始化Level2数据服务组件...
+2025-08-29 18:42:02,097 - trading_system.mock_level2_receiver - INFO - 模拟Level2数据接收器初始化完成
+2025-08-29 18:42:02,097 - trading_system.level2_service - INFO - Level2数据接收器创建成功
+2025-08-29 18:42:08,593 - trading_system.redis_cache - WARNING - Redis缓存连接失败: Authentication required.，将使用内存缓存
+2025-08-29 18:42:08,593 - trading_system.realtime_processor - INFO - 实时数据处理器初始化完成
+2025-08-29 18:42:08,593 - trading_system.level2_service - INFO - 实时数据处理器创建成功
+2025-08-29 18:42:08,594 - trading_system.connection_manager - INFO - 连接管理器初始化完成
+2025-08-29 18:42:08,594 - trading_system.level2_service - INFO - 连接管理器创建成功
+2025-08-29 18:42:08,594 - trading_system.connection_manager - INFO - 连接实例已设置
+2025-08-29 18:42:08,594 - trading_system.level2_service - INFO - Level2数据服务组件初始化完成
+2025-08-29 18:42:08,594 - trading_system.level2_service - INFO - 启动Level2数据服务...
+2025-08-29 18:42:08,594 - trading_system.realtime_processor - INFO - 启动实时数据处理器...
+2025-08-29 18:42:08,594 - trading_system.realtime_processor - INFO - 实时数据处理器启动成功，工作线程数: 4
+2025-08-29 18:42:08,595 - trading_system.connection_manager - INFO - 启动连接监控...
+2025-08-29 18:42:08,595 - trading_system.connection_manager - INFO - 健康检查已启动
+2025-08-29 18:42:08,595 - trading_system.connection_manager - INFO - 质量监控已启动
+2025-08-29 18:42:08,595 - trading_system.connection_manager - INFO - 连接监控启动成功
+2025-08-29 18:42:08,595 - trading_system.mock_level2_receiver - INFO - 启动模拟Level2数据接收器...
+2025-08-29 18:42:09,596 - trading_system.mock_level2_receiver - INFO - 模拟连接成功
+2025-08-29 18:42:10,597 - trading_system.mock_level2_receiver - INFO - 模拟登录成功
+2025-08-29 18:42:10,597 - trading_system.mock_level2_receiver - INFO - 开始生成模拟数据...
+2025-08-29 18:42:10,597 - trading_system.mock_level2_receiver - INFO - 模拟Level2数据接收器启动成功
+2025-08-29 18:42:10,598 - trading_system.mock_level2_receiver - ERROR - 快照行情回调失败: no running event loop
+2025-08-29 18:42:10,598 - trading_system.level2_service - INFO - Level2数据服务启动成功
+2025-08-29 18:42:10,599 - trading_system.mock_level2_receiver - ERROR - 逐笔委托回调失败: no running event loop
+2025-08-29 18:42:10,599 - trading_system - INFO - 系统状态变更: 运行=True
+2025-08-29 18:42:10,600 - trading_system.trading_service - INFO - 量化交易系统启动成功
+2025-08-29 18:42:11,249 - trading_system.mock_level2_receiver - ERROR - 快照行情回调失败: no running event loop
+2025-08-29 18:42:11,886 - trading_system.mock_level2_receiver - ERROR - 快照行情回调失败: no running event loop
+2025-08-29 18:42:11,887 - trading_system.mock_level2_receiver - ERROR - 逐笔成交回调失败: no running event loop
+2025-08-29 18:42:11,888 - trading_system.mock_level2_receiver - ERROR - 逐笔委托回调失败: no running event loop
+2025-08-29 18:42:12,568 - trading_system.mock_level2_receiver - ERROR - 快照行情回调失败: no running event loop
+2025-08-29 18:42:12,569 - trading_system.mock_level2_receiver - ERROR - 逐笔成交回调失败: no running event loop
+2025-08-29 18:42:13,428 - trading_system.mock_level2_receiver - ERROR - 快照行情回调失败: no running event loop
+2025-08-29 18:42:13,429 - trading_system.mock_level2_receiver - ERROR - 逐笔成交回调失败: no running event loop
+2025-08-29 18:42:13,430 - trading_system.mock_level2_receiver - ERROR - 逐笔委托回调失败: no running event loop
+2025-08-29 18:42:13,864 - trading_system.mock_level2_receiver - ERROR - 快照行情回调失败: no running event loop
+2025-08-29 18:42:14,770 - trading_system.mock_level2_receiver - ERROR - 快照行情回调失败: no running event loop
+2025-08-29 18:42:14,771 - trading_system.mock_level2_receiver - ERROR - 逐笔成交回调失败: no running event loop
+2025-08-29 18:42:15,090 - trading_system.mock_level2_receiver - ERROR - 快照行情回调失败: no running event loop
+2025-08-29 18:42:15,091 - trading_system.mock_level2_receiver - ERROR - 逐笔成交回调失败: no running event loop
+2025-08-29 18:42:15,796 - trading_system.mock_level2_receiver - ERROR - 快照行情回调失败: no running event loop
+2025-08-29 18:42:15,797 - trading_system.mock_level2_receiver - ERROR - 逐笔成交回调失败: no running event loop
+2025-08-29 18:42:16,163 - trading_system.mock_level2_receiver - ERROR - 快照行情回调失败: no running event loop
+2025-08-29 18:42:16,164 - trading_system.mock_level2_receiver - ERROR - 逐笔委托回调失败: no running event loop
+2025-08-29 18:42:16,395 - trading_system.mock_level2_receiver - ERROR - 快照行情回调失败: no running event loop
+2025-08-29 18:42:17,234 - trading_system.mock_level2_receiver - ERROR - 快照行情回调失败: no running event loop
+2025-08-29 18:42:17,235 - trading_system.mock_level2_receiver - ERROR - 逐笔成交回调失败: no running event loop
+2025-08-29 18:42:17,236 - trading_system.mock_level2_receiver - ERROR - 逐笔委托回调失败: no running event loop
+2025-08-29 18:42:17,606 - trading_system.mock_level2_receiver - ERROR - 快照行情回调失败: no running event loop
+2025-08-29 18:42:17,607 - trading_system.mock_level2_receiver - ERROR - 逐笔成交回调失败: no running event loop
+2025-08-29 18:42:18,517 - trading_system.mock_level2_receiver - ERROR - 快照行情回调失败: no running event loop
+2025-08-29 18:42:19,245 - trading_system.mock_level2_receiver - ERROR - 快照行情回调失败: no running event loop
+2025-08-29 18:42:19,723 - trading_system.mock_level2_receiver - ERROR - 快照行情回调失败: no running event loop
+2025-08-29 18:42:19,724 - trading_system.mock_level2_receiver - ERROR - 逐笔委托回调失败: no running event loop
+2025-08-29 18:42:20,612 - trading_system - INFO - 获取到事件: 0个
+2025-08-29 18:42:20,612 - trading_system - INFO - 获取到推荐: 0个
+2025-08-29 18:42:20,613 - trading_system.trading_service - INFO - 停止量化交易系统...
+2025-08-29 18:42:20,613 - trading_system.level2_service - INFO - 停止Level2数据服务...
+2025-08-29 18:42:20,613 - trading_system.mock_level2_receiver - INFO - 停止模拟Level2数据接收器...
+2025-08-29 18:42:20,759 - trading_system.mock_level2_receiver - INFO - 模拟Level2数据接收器已停止
+2025-08-29 18:42:20,759 - trading_system.level2_service - INFO - Level2数据接收器已停止
+2025-08-29 18:42:20,759 - trading_system.connection_manager - INFO - 停止连接监控...
+2025-08-29 18:42:20,760 - trading_system.connection_manager - INFO - 连接监控已停止
+2025-08-29 18:42:20,760 - trading_system.level2_service - INFO - 连接监控已停止
+2025-08-29 18:42:20,760 - trading_system.realtime_processor - INFO - 停止实时数据处理器...
+2025-08-29 18:42:40,609 - trading_system.realtime_engine - INFO - 引擎统计 - 总任务: 0, 完成: 0, 失败: 0, 队列: 0, 平均耗时: 0.0000s
+2025-08-29 18:42:40,609 - trading_system.realtime_engine - INFO - 缓存统计 - 大小: 0, 命中率: 0.00%
+2025-08-29 18:42:40,609 - trading_system.realtime_processor - INFO - 性能监控 - 总处理: 0, 平均耗时: 0.0000s, 缓冲区: 0, 错误: 0
+2025-08-29 18:42:40,610 - trading_system.realtime_processor - INFO - 实时数据处理器已停止
+2025-08-29 18:42:40,610 - trading_system.level2_service - INFO - 实时数据处理器已停止
+2025-08-29 18:42:40,610 - trading_system.level2_service - INFO - Level2数据服务已停止
+2025-08-29 18:42:40,610 - trading_system.realtime_engine - INFO - 停止实时计算引擎...
+2025-08-29 18:42:40,611 - trading_system.incremental_cache - INFO - 增量计算缓存已停止
+2025-08-29 18:42:40,611 - trading_system.realtime_engine - INFO - 实时计算引擎已停止
+2025-08-29 18:42:40,611 - trading_system - INFO - 系统状态变更: 运行=False
+2025-08-29 18:42:40,611 - trading_system.trading_service - INFO - 量化交易系统已停止
+2025-08-29 18:42:40,611 - trading_system - INFO - 事件处理功能测试成功
+2025-08-29 18:42:40,611 - trading_system - INFO - ✅ 事件处理功能测试 通过
+2025-08-29 18:42:42,626 - trading_system - INFO - 执行 系统统计功能测试...
+2025-08-29 18:42:42,627 - trading_system - INFO - 开始测试系统统计功能...
+2025-08-29 18:42:42,628 - trading_system.trading_service - INFO - 启动量化交易系统...
+2025-08-29 18:42:42,628 - trading_system.level2_service - INFO - Level2数据服务初始化完成
+2025-08-29 18:42:42,628 - trading_system.incremental_cache - INFO - 增量计算缓存初始化完成
+2025-08-29 18:42:42,629 - trading_system.limit_up_detector - INFO - 涨停炸板检测器初始化完成
+2025-08-29 18:42:42,629 - trading_system.limit_up_scorer - INFO - 涨停炸板评分器初始化完成
+2025-08-29 18:42:42,629 - trading_system.limit_up_analyzer - INFO - 涨停炸板分析器初始化完成
+2025-08-29 18:42:42,629 - trading_system.stock_filter - INFO - 股票筛选器初始化完成
+2025-08-29 18:42:42,630 - trading_system.stock_sorter - INFO - 股票排序器初始化完成
+2025-08-29 18:42:42,630 - trading_system.stock_recommender - INFO - 股票推荐引擎初始化完成
+2025-08-29 18:42:42,630 - trading_system.stock_filter_manager - INFO - 股票筛选管理器初始化完成
+2025-08-29 18:42:42,631 - trading_system.realtime_engine - INFO - 实时计算引擎初始化完成
+2025-08-29 18:42:42,631 - trading_system.realtime_engine - INFO - 启动实时计算引擎...
+2025-08-29 18:42:42,631 - trading_system.incremental_cache - INFO - 增量计算缓存已启动
+2025-08-29 18:42:42,632 - trading_system.realtime_engine - INFO - 实时计算引擎启动成功，工作线程数: 4
+2025-08-29 18:42:42,632 - trading_system.level2_service - INFO - 初始化Level2数据服务组件...
+2025-08-29 18:42:42,633 - trading_system.mock_level2_receiver - INFO - 模拟Level2数据接收器初始化完成
+2025-08-29 18:42:42,633 - trading_system.level2_service - INFO - Level2数据接收器创建成功
+2025-08-29 18:42:52,600 - trading_system.redis_cache - WARNING - Redis缓存连接失败: Authentication required.，将使用内存缓存
+2025-08-29 18:42:52,601 - trading_system.realtime_processor - INFO - 实时数据处理器初始化完成
+2025-08-29 18:42:52,601 - trading_system.level2_service - INFO - 实时数据处理器创建成功
+2025-08-29 18:42:52,602 - trading_system.connection_manager - INFO - 连接管理器初始化完成
+2025-08-29 18:42:52,602 - trading_system.level2_service - INFO - 连接管理器创建成功
+2025-08-29 18:42:52,602 - trading_system.connection_manager - INFO - 连接实例已设置
+2025-08-29 18:42:52,602 - trading_system.level2_service - INFO - Level2数据服务组件初始化完成
+2025-08-29 18:42:52,602 - trading_system.level2_service - INFO - 启动Level2数据服务...
+2025-08-29 18:42:52,602 - trading_system.realtime_processor - INFO - 启动实时数据处理器...
+2025-08-29 18:42:52,603 - trading_system.realtime_processor - INFO - 实时数据处理器启动成功，工作线程数: 4
+2025-08-29 18:42:52,603 - trading_system.connection_manager - INFO - 启动连接监控...
+2025-08-29 18:42:52,603 - trading_system.connection_manager - INFO - 健康检查已启动
+2025-08-29 18:42:52,603 - trading_system.connection_manager - INFO - 质量监控已启动
+2025-08-29 18:42:52,603 - trading_system.connection_manager - INFO - 连接监控启动成功
+2025-08-29 18:42:52,603 - trading_system.mock_level2_receiver - INFO - 启动模拟Level2数据接收器...
+2025-08-29 18:42:53,604 - trading_system.mock_level2_receiver - INFO - 模拟连接成功
+2025-08-29 18:42:54,604 - trading_system.mock_level2_receiver - INFO - 模拟登录成功
+2025-08-29 18:42:54,605 - trading_system.mock_level2_receiver - INFO - 开始生成模拟数据...
+2025-08-29 18:42:54,605 - trading_system.mock_level2_receiver - INFO - 模拟Level2数据接收器启动成功
+2025-08-29 18:42:54,606 - trading_system.level2_service - INFO - Level2数据服务启动成功
+2025-08-29 18:42:54,606 - trading_system.mock_level2_receiver - ERROR - 快照行情回调失败: no running event loop
+2025-08-29 18:42:54,606 - trading_system - INFO - 系统状态变更: 运行=True
+2025-08-29 18:42:54,606 - trading_system.trading_service - INFO - 量化交易系统启动成功
+2025-08-29 18:42:55,275 - trading_system.mock_level2_receiver - ERROR - 快照行情回调失败: no running event loop
+2025-08-29 18:42:55,276 - trading_system.mock_level2_receiver - ERROR - 逐笔成交回调失败: no running event loop
+2025-08-29 18:42:55,961 - trading_system.mock_level2_receiver - ERROR - 快照行情回调失败: no running event loop
+2025-08-29 18:42:56,092 - trading_system.mock_level2_receiver - ERROR - 快照行情回调失败: no running event loop
+2025-08-29 18:42:56,370 - trading_system.mock_level2_receiver - ERROR - 快照行情回调失败: no running event loop
+2025-08-29 18:42:56,371 - trading_system.mock_level2_receiver - ERROR - 逐笔委托回调失败: no running event loop
+2025-08-29 18:42:57,011 - trading_system.mock_level2_receiver - ERROR - 快照行情回调失败: no running event loop
+2025-08-29 18:42:57,431 - trading_system.mock_level2_receiver - ERROR - 逐笔委托回调失败: no running event loop
+2025-08-29 18:42:57,906 - trading_system.mock_level2_receiver - ERROR - 快照行情回调失败: no running event loop
+2025-08-29 18:42:58,369 - trading_system.mock_level2_receiver - ERROR - 快照行情回调失败: no running event loop
+2025-08-29 18:42:58,370 - trading_system.mock_level2_receiver - ERROR - 逐笔成交回调失败: no running event loop
+2025-08-29 18:42:58,960 - trading_system.mock_level2_receiver - ERROR - 快照行情回调失败: no running event loop
+2025-08-29 18:42:59,611 - trading_system - INFO - 系统统计: {'system_status': {'is_running': True, 'uptime_seconds': 5, 'data_service_status': 'running', 'compute_engine_status': 'running'}, 'data_statistics': {'total_data_processed': 0, 'total_events_detected': 0, 'total_recommendations': 0, 'latest_events_count': 0, 'latest_recommendations_count': 0}, 'data_service': {'is_running': True, 'is_initialized': True, 'service_stats': {'start_time': datetime.datetime(2025, 8, 29, 18, 42, 54, 606160), 'total_data_processed': 0, 'connection_events': 0, 'error_count': 0}, 'receiver_status': {'is_running': True, 'is_connected': True, 'is_logged_in': True, 'reconnect_count': 0, 'stats': {'market_data_count': 9, 'transaction_count': 2, 'order_detail_count': 2, 'last_data_time': datetime.datetime(2025, 8, 29, 18, 42, 58, 959606), 'start_time': datetime.datetime(2025, 8, 29, 18, 42, 52, 603904)}, 'config': {'connection_mode': 'mock', 'mock_mode': True}}, 'processor_status': {'total_processed': 0, 'market_data_processed': 0, 'transaction_processed': 0, 'order_detail_processed': 0, 'processing_errors': 0, 'avg_processing_time': 0.0, 'last_processing_time': None, 'queue_size': 0, 'buffer_status': {'market_data_count': 0, 'transaction_count': 0, 'order_detail_count': 0, 'total_count': 0}, 'cache_available': False, 'is_running': True}, 'connection_status': {'state': 'disconnected', 'current_attempt': 0, 'max_attempts': 10, 'next_reconnect_time': None, 'metrics': {'connect_time': None, 'last_heartbeat': None, 'total_connects': 0, 'total_disconnects': 0, 'total_reconnects': 0, 'failed_attempts': 0, 'data_received_count': 0, 'last_data_time': None, 'connection_uptime_seconds': 0.0, 'packet_loss_rate': 0.0}}, 'health_status': {'is_healthy': False, 'state': 'disconnected', 'data_rate': 0.0, 'no_data_duration': 0.0, 'health_check_enabled': True, 'quality_monitor_enabled': True, 'failure_detection_enabled': True}}, 'compute_engine': {'engine_stats': {'total_tasks': 0, 'completed_tasks': 0, 'failed_tasks': 0, 'avg_compute_time': 0.0, 'queue_size': 0, 'active_workers': 0, 'is_running': True}, 'cache_stats': {'cache_size': 0, 'max_cache_size': 10000, 'hits': 0, 'misses': 0, 'hit_rate': 0.0, 'incremental_keys': 0}, 'analyzer_stats': {'total_stocks': 0, 'total_events': 0, 'avg_score': 0.0, 'max_score': 0.0, 'min_score': 0.0, 'window_size': 300, 'cached_prev_close_count': 0}}}
+2025-08-29 18:42:59,612 - trading_system.trading_service - INFO - 停止量化交易系统...
+2025-08-29 18:42:59,612 - trading_system.level2_service - INFO - 停止Level2数据服务...
+2025-08-29 18:42:59,612 - trading_system.mock_level2_receiver - INFO - 停止模拟Level2数据接收器...
+2025-08-29 18:42:59,956 - trading_system.mock_level2_receiver - INFO - 模拟Level2数据接收器已停止
+2025-08-29 18:42:59,956 - trading_system.level2_service - INFO - Level2数据接收器已停止
+2025-08-29 18:42:59,956 - trading_system.connection_manager - INFO - 停止连接监控...
+2025-08-29 18:42:59,957 - trading_system.connection_manager - INFO - 连接监控已停止
+2025-08-29 18:42:59,957 - trading_system.level2_service - INFO - 连接监控已停止
+2025-08-29 18:42:59,957 - trading_system.realtime_processor - INFO - 停止实时数据处理器...
+2025-08-29 18:43:24,621 - trading_system.realtime_engine - INFO - 引擎统计 - 总任务: 0, 完成: 0, 失败: 0, 队列: 0, 平均耗时: 0.0000s
+2025-08-29 18:43:24,622 - trading_system.realtime_engine - INFO - 缓存统计 - 大小: 0, 命中率: 0.00%
+2025-08-29 18:43:24,622 - trading_system.realtime_processor - INFO - 性能监控 - 总处理: 0, 平均耗时: 0.0000s, 缓冲区: 0, 错误: 0
+2025-08-29 18:43:24,622 - trading_system.realtime_processor - INFO - 实时数据处理器已停止
+2025-08-29 18:43:24,622 - trading_system.level2_service - INFO - 实时数据处理器已停止
+2025-08-29 18:43:24,622 - trading_system.level2_service - INFO - Level2数据服务已停止
+2025-08-29 18:43:24,623 - trading_system.realtime_engine - INFO - 停止实时计算引擎...
+2025-08-29 18:43:24,623 - trading_system.incremental_cache - INFO - 增量计算缓存已停止
+2025-08-29 18:43:24,623 - trading_system.realtime_engine - INFO - 实时计算引擎已停止
+2025-08-29 18:43:24,623 - trading_system - INFO - 系统状态变更: 运行=False
+2025-08-29 18:43:24,623 - trading_system.trading_service - INFO - 量化交易系统已停止
+2025-08-29 18:43:24,623 - trading_system - INFO - 系统统计功能测试成功
+2025-08-29 18:43:24,623 - trading_system - INFO - ✅ 系统统计功能测试 通过
+2025-08-29 18:43:26,627 - trading_system - INFO - 执行 完整集成工作流测试...
+2025-08-29 18:43:26,628 - trading_system - INFO - 开始测试完整集成工作流...
+2025-08-29 18:43:26,628 - trading_system.trading_service - INFO - 启动量化交易系统...
+2025-08-29 18:43:26,628 - trading_system.level2_service - INFO - Level2数据服务初始化完成
+2025-08-29 18:43:26,629 - trading_system.incremental_cache - INFO - 增量计算缓存初始化完成
+2025-08-29 18:43:26,629 - trading_system.limit_up_detector - INFO - 涨停炸板检测器初始化完成
+2025-08-29 18:43:26,629 - trading_system.limit_up_scorer - INFO - 涨停炸板评分器初始化完成
+2025-08-29 18:43:26,629 - trading_system.limit_up_analyzer - INFO - 涨停炸板分析器初始化完成
+2025-08-29 18:43:26,629 - trading_system.stock_filter - INFO - 股票筛选器初始化完成
+2025-08-29 18:43:26,629 - trading_system.stock_sorter - INFO - 股票排序器初始化完成
+2025-08-29 18:43:26,630 - trading_system.stock_recommender - INFO - 股票推荐引擎初始化完成
+2025-08-29 18:43:26,630 - trading_system.stock_filter_manager - INFO - 股票筛选管理器初始化完成
+2025-08-29 18:43:26,630 - trading_system.realtime_engine - INFO - 实时计算引擎初始化完成
+2025-08-29 18:43:26,630 - trading_system.realtime_engine - INFO - 启动实时计算引擎...
+2025-08-29 18:43:26,630 - trading_system.incremental_cache - INFO - 增量计算缓存已启动
+2025-08-29 18:43:26,630 - trading_system.realtime_engine - INFO - 实时计算引擎启动成功，工作线程数: 4
+2025-08-29 18:43:26,630 - trading_system.level2_service - INFO - 初始化Level2数据服务组件...
+2025-08-29 18:43:26,631 - trading_system.mock_level2_receiver - INFO - 模拟Level2数据接收器初始化完成
+2025-08-29 18:43:26,631 - trading_system.level2_service - INFO - Level2数据接收器创建成功
+2025-08-29 18:43:32,541 - trading_system.redis_cache - WARNING - Redis缓存连接失败: Authentication required.，将使用内存缓存
+2025-08-29 18:43:32,541 - trading_system.realtime_processor - INFO - 实时数据处理器初始化完成
+2025-08-29 18:43:32,542 - trading_system.level2_service - INFO - 实时数据处理器创建成功
+2025-08-29 18:43:32,542 - trading_system.connection_manager - INFO - 连接管理器初始化完成
+2025-08-29 18:43:32,542 - trading_system.level2_service - INFO - 连接管理器创建成功
+2025-08-29 18:43:32,542 - trading_system.connection_manager - INFO - 连接实例已设置
+2025-08-29 18:43:32,543 - trading_system.level2_service - INFO - Level2数据服务组件初始化完成
+2025-08-29 18:43:32,543 - trading_system.level2_service - INFO - 启动Level2数据服务...
+2025-08-29 18:43:32,543 - trading_system.realtime_processor - INFO - 启动实时数据处理器...
+2025-08-29 18:43:32,543 - trading_system.realtime_processor - INFO - 实时数据处理器启动成功，工作线程数: 4
+2025-08-29 18:43:32,543 - trading_system.connection_manager - INFO - 启动连接监控...
+2025-08-29 18:43:32,543 - trading_system.connection_manager - INFO - 健康检查已启动
+2025-08-29 18:43:32,544 - trading_system.connection_manager - INFO - 质量监控已启动
+2025-08-29 18:43:32,544 - trading_system.connection_manager - INFO - 连接监控启动成功
+2025-08-29 18:43:32,544 - trading_system.mock_level2_receiver - INFO - 启动模拟Level2数据接收器...
+2025-08-29 18:43:33,544 - trading_system.mock_level2_receiver - INFO - 模拟连接成功
+2025-08-29 18:43:34,545 - trading_system.mock_level2_receiver - INFO - 模拟登录成功
+2025-08-29 18:43:34,546 - trading_system.mock_level2_receiver - INFO - 开始生成模拟数据...
+2025-08-29 18:43:34,546 - trading_system.mock_level2_receiver - INFO - 模拟Level2数据接收器启动成功
+2025-08-29 18:43:34,547 - trading_system.level2_service - INFO - Level2数据服务启动成功
+2025-08-29 18:43:34,547 - trading_system.mock_level2_receiver - ERROR - 快照行情回调失败: no running event loop
+2025-08-29 18:43:34,547 - trading_system - INFO - 系统状态变更: 运行=True
+2025-08-29 18:43:34,548 - trading_system - INFO - 系统状态变更: 运行=True
+2025-08-29 18:43:34,548 - trading_system.trading_service - INFO - 量化交易系统启动成功
+2025-08-29 18:43:34,548 - trading_system.mock_level2_receiver - INFO - 模拟订阅快照行情: ['000001', '600000', '600519'] @ COMM
+2025-08-29 18:43:34,548 - trading_system.mock_level2_receiver - ERROR - 逐笔成交回调失败: no running event loop
+2025-08-29 18:43:34,549 - trading_system.mock_level2_receiver - INFO - 模拟订阅逐笔成交: ['000001', '600000', '600519'] @ SZSE
+2025-08-29 18:43:34,549 - trading_system.mock_level2_receiver - INFO - 模拟订阅逐笔委托: ['000001', '600000', '600519'] @ SZSE
+2025-08-29 18:43:34,549 - trading_system - INFO - 系统运行中，收集数据和生成推荐...
+2025-08-29 18:43:34,549 - trading_system.mock_level2_receiver - ERROR - 逐笔委托回调失败: no running event loop
+2025-08-29 18:43:35,443 - trading_system.mock_level2_receiver - ERROR - 逐笔委托回调失败: no running event loop
+2025-08-29 18:43:36,350 - trading_system.mock_level2_receiver - ERROR - 快照行情回调失败: no running event loop
+2025-08-29 18:43:36,351 - trading_system.mock_level2_receiver - ERROR - 逐笔成交回调失败: no running event loop
+2025-08-29 18:43:37,140 - trading_system.mock_level2_receiver - ERROR - 快照行情回调失败: no running event loop
+2025-08-29 18:43:37,709 - trading_system.mock_level2_receiver - ERROR - 快照行情回调失败: no running event loop
+2025-08-29 18:43:38,360 - trading_system.mock_level2_receiver - ERROR - 快照行情回调失败: no running event loop
+2025-08-29 18:43:38,361 - trading_system.mock_level2_receiver - ERROR - 逐笔成交回调失败: no running event loop
+2025-08-29 18:43:38,743 - trading_system.mock_level2_receiver - ERROR - 快照行情回调失败: no running event loop
+2025-08-29 18:43:39,064 - trading_system.mock_level2_receiver - ERROR - 快照行情回调失败: no running event loop
+2025-08-29 18:43:40,557 - trading_system.mock_level2_receiver - ERROR - 快照行情回调失败: no running event loop
+2025-08-29 18:43:40,874 - trading_system.mock_level2_receiver - ERROR - 快照行情回调失败: no running event loop
+2025-08-29 18:43:40,875 - trading_system.mock_level2_receiver - ERROR - 逐笔成交回调失败: no running event loop
+2025-08-29 18:43:41,470 - trading_system.mock_level2_receiver - ERROR - 逐笔成交回调失败: no running event loop
+2025-08-29 18:43:41,471 - trading_system.mock_level2_receiver - ERROR - 逐笔委托回调失败: no running event loop
+2025-08-29 18:43:42,363 - trading_system.mock_level2_receiver - ERROR - 快照行情回调失败: no running event loop
+2025-08-29 18:43:42,364 - trading_system.mock_level2_receiver - ERROR - 逐笔委托回调失败: no running event loop
+2025-08-29 18:43:42,602 - trading_system.mock_level2_receiver - ERROR - 快照行情回调失败: no running event loop
+2025-08-29 18:43:42,603 - trading_system.mock_level2_receiver - ERROR - 逐笔成交回调失败: no running event loop
+2025-08-29 18:43:42,604 - trading_system.mock_level2_receiver - ERROR - 逐笔委托回调失败: no running event loop
+2025-08-29 18:43:42,743 - trading_system.mock_level2_receiver - ERROR - 快照行情回调失败: no running event loop
+2025-08-29 18:43:43,733 - trading_system.mock_level2_receiver - ERROR - 逐笔成交回调失败: no running event loop
+2025-08-29 18:43:44,517 - trading_system.mock_level2_receiver - ERROR - 快照行情回调失败: no running event loop
+2025-08-29 18:43:44,518 - trading_system.mock_level2_receiver - ERROR - 逐笔委托回调失败: no running event loop
+2025-08-29 18:43:45,476 - trading_system.mock_level2_receiver - ERROR - 快照行情回调失败: no running event loop
+2025-08-29 18:43:45,919 - trading_system.mock_level2_receiver - ERROR - 快照行情回调失败: no running event loop
+2025-08-29 18:43:46,081 - trading_system.mock_level2_receiver - ERROR - 快照行情回调失败: no running event loop
+2025-08-29 18:43:46,085 - trading_system.mock_level2_receiver - ERROR - 逐笔委托回调失败: no running event loop
+2025-08-29 18:43:46,670 - trading_system.mock_level2_receiver - ERROR - 快照行情回调失败: no running event loop
+2025-08-29 18:43:47,918 - trading_system.mock_level2_receiver - ERROR - 快照行情回调失败: no running event loop
+2025-08-29 18:43:47,919 - trading_system.mock_level2_receiver - ERROR - 逐笔成交回调失败: no running event loop
+2025-08-29 18:43:47,920 - trading_system.mock_level2_receiver - ERROR - 逐笔委托回调失败: no running event loop
+2025-08-29 18:43:49,552 - trading_system - INFO - 工作流结果:
+2025-08-29 18:43:49,552 - trading_system - INFO -   - 炸板事件: 0个
+2025-08-29 18:43:49,552 - trading_system - INFO -   - 推荐结果: 0个
+2025-08-29 18:43:49,553 - trading_system - INFO -   - 系统运行时间: 15秒
+2025-08-29 18:43:49,553 - trading_system - INFO -   - 回调统计: {'events_received': 0, 'recommendations_received': 0, 'status_changes': 6}
+2025-08-29 18:43:49,553 - trading_system.trading_service - INFO - 停止量化交易系统...
+2025-08-29 18:43:49,553 - trading_system.level2_service - INFO - 停止Level2数据服务...
+2025-08-29 18:43:49,554 - trading_system.mock_level2_receiver - INFO - 停止模拟Level2数据接收器...
+2025-08-29 18:43:49,862 - trading_system.mock_level2_receiver - INFO - 模拟Level2数据接收器已停止
+2025-08-29 18:43:49,862 - trading_system.level2_service - INFO - Level2数据接收器已停止
+2025-08-29 18:43:49,862 - trading_system.connection_manager - INFO - 停止连接监控...
+2025-08-29 18:43:49,862 - trading_system.connection_manager - INFO - 连接监控已停止
+2025-08-29 18:43:49,862 - trading_system.level2_service - INFO - 连接监控已停止
+2025-08-29 18:43:49,863 - trading_system.realtime_processor - INFO - 停止实时数据处理器...
+2025-08-29 18:44:04,555 - trading_system.realtime_engine - INFO - 引擎统计 - 总任务: 0, 完成: 0, 失败: 0, 队列: 0, 平均耗时: 0.0000s
+2025-08-29 18:44:04,555 - trading_system.realtime_engine - INFO - 缓存统计 - 大小: 0, 命中率: 0.00%
+2025-08-29 18:44:04,555 - trading_system.realtime_processor - INFO - 性能监控 - 总处理: 0, 平均耗时: 0.0000s, 缓冲区: 0, 错误: 0
+2025-08-29 18:44:04,556 - trading_system.realtime_processor - INFO - 实时数据处理器已停止
+2025-08-29 18:44:04,556 - trading_system.level2_service - INFO - 实时数据处理器已停止
+2025-08-29 18:44:04,556 - trading_system.level2_service - INFO - Level2数据服务已停止
+2025-08-29 18:44:04,556 - trading_system.realtime_engine - INFO - 停止实时计算引擎...
+2025-08-29 18:44:04,556 - trading_system.incremental_cache - INFO - 增量计算缓存已停止
+2025-08-29 18:44:04,556 - trading_system.realtime_engine - INFO - 实时计算引擎已停止
+2025-08-29 18:44:04,556 - trading_system - INFO - 系统状态变更: 运行=False
+2025-08-29 18:44:04,556 - trading_system - INFO - 系统状态变更: 运行=False
+2025-08-29 18:44:04,556 - trading_system.trading_service - INFO - 量化交易系统已停止
+2025-08-29 18:44:04,557 - trading_system - INFO - 完整集成工作流测试成功
+2025-08-29 18:44:04,557 - trading_system - INFO - ✅ 完整集成工作流测试 通过
+2025-08-29 18:44:06,564 - trading_system - INFO - 测试完成: 5/5 通过
+2025-08-29 18:49:29,198 - trading_system.trading_api - INFO - 量化交易系统API初始化完成
+2025-08-29 18:49:29,233 - trading_system - INFO - Web前端界面测试器初始化完成
+2025-08-29 18:49:29,233 - trading_system - INFO - 开始Web前端界面完整测试
+2025-08-29 18:49:29,234 - trading_system - INFO - 执行 服务器创建测试...
+2025-08-29 18:49:29,234 - trading_system - INFO - 开始测试服务器创建...
+2025-08-29 18:49:29,234 - trading_system - INFO - ✅ 服务器创建测试通过
+2025-08-29 18:49:29,235 - trading_system - INFO - ✅ 服务器创建测试 通过
+2025-08-29 18:49:29,235 - trading_system - INFO - 执行 HTML页面生成测试...
+2025-08-29 18:49:29,235 - trading_system - INFO - 开始测试HTML页面生成...
+2025-08-29 18:49:29,235 - trading_system - INFO - ✅ HTML页面生成测试通过
+2025-08-29 18:49:29,235 - trading_system - INFO - ✅ HTML页面生成测试 通过
+2025-08-29 18:49:29,236 - trading_system - INFO - 执行 静态文件目录测试...
+2025-08-29 18:49:29,236 - trading_system - INFO - 开始测试静态文件目录...
+2025-08-29 18:49:29,236 - trading_system - INFO - 静态文件目录: E:\zhangyw\lh_lev2md\src\trading_system\web\static
+2025-08-29 18:49:29,236 - trading_system - INFO - 模板目录: E:\zhangyw\lh_lev2md\src\trading_system\web\templates
+2025-08-29 18:49:29,236 - trading_system - INFO - ✅ 静态文件目录测试通过
+2025-08-29 18:49:29,237 - trading_system - INFO - ✅ 静态文件目录测试 通过
+2025-08-29 18:49:29,237 - trading_system - INFO - 执行 API集成测试...
+2025-08-29 18:49:29,237 - trading_system - INFO - 开始测试API集成...
+2025-08-29 18:49:29,237 - trading_system - INFO - ✅ API集成测试通过
+2025-08-29 18:49:29,237 - trading_system - INFO - ✅ API集成测试 通过
+2025-08-29 18:49:29,238 - trading_system - INFO - 执行 路由功能测试...
+2025-08-29 18:49:29,238 - trading_system - INFO - 开始测试路由功能...
+2025-08-29 18:49:29,251 - trading_system - ERROR - 路由功能测试失败: The starlette.testclient module requires the httpx package to be installed.
+You can install this with:
+    $ pip install httpx
+
+2025-08-29 18:49:29,252 - trading_system - ERROR - ❌ 路由功能测试 失败
+2025-08-29 18:49:29,252 - trading_system - INFO - 执行 JavaScript功能测试...
+2025-08-29 18:49:29,252 - trading_system - INFO - 开始测试JavaScript功能...
+2025-08-29 18:49:29,252 - trading_system - INFO - ✅ JavaScript功能测试通过
+2025-08-29 18:49:29,252 - trading_system - INFO - ✅ JavaScript功能测试 通过
+2025-08-29 18:49:29,253 - trading_system - INFO - 测试完成: 5/6 通过
+2025-08-29 18:49:47,771 - trading_system.trading_api - INFO - 量化交易系统API初始化完成
+2025-08-29 18:49:47,772 - trading_system - INFO - Web前端界面测试器初始化完成
+2025-08-29 18:49:47,773 - trading_system - INFO - 开始Web前端界面完整测试
+2025-08-29 18:49:47,773 - trading_system - INFO - 执行 服务器创建测试...
+2025-08-29 18:49:47,773 - trading_system - INFO - 开始测试服务器创建...
+2025-08-29 18:49:47,773 - trading_system - INFO - ✅ 服务器创建测试通过
+2025-08-29 18:49:47,773 - trading_system - INFO - ✅ 服务器创建测试 通过
+2025-08-29 18:49:47,773 - trading_system - INFO - 执行 HTML页面生成测试...
+2025-08-29 18:49:47,773 - trading_system - INFO - 开始测试HTML页面生成...
+2025-08-29 18:49:47,774 - trading_system - INFO - ✅ HTML页面生成测试通过
+2025-08-29 18:49:47,774 - trading_system - INFO - ✅ HTML页面生成测试 通过
+2025-08-29 18:49:47,774 - trading_system - INFO - 执行 静态文件目录测试...
+2025-08-29 18:49:47,774 - trading_system - INFO - 开始测试静态文件目录...
+2025-08-29 18:49:47,774 - trading_system - INFO - 静态文件目录: E:\zhangyw\lh_lev2md\src\trading_system\web\static
+2025-08-29 18:49:47,774 - trading_system - INFO - 模板目录: E:\zhangyw\lh_lev2md\src\trading_system\web\templates
+2025-08-29 18:49:47,774 - trading_system - INFO - ✅ 静态文件目录测试通过
+2025-08-29 18:49:47,774 - trading_system - INFO - ✅ 静态文件目录测试 通过
+2025-08-29 18:49:47,775 - trading_system - INFO - 执行 API集成测试...
+2025-08-29 18:49:47,775 - trading_system - INFO - 开始测试API集成...
+2025-08-29 18:49:47,775 - trading_system - INFO - ✅ API集成测试通过
+2025-08-29 18:49:47,775 - trading_system - INFO - ✅ API集成测试 通过
+2025-08-29 18:49:47,775 - trading_system - INFO - 执行 路由功能测试...
+2025-08-29 18:49:47,775 - trading_system - INFO - 开始测试路由功能...
+2025-08-29 18:49:47,983 - trading_system - INFO - ✅ 路由功能测试通过
+2025-08-29 18:49:47,983 - trading_system - INFO - ✅ 路由功能测试 通过
+2025-08-29 18:49:47,984 - trading_system - INFO - 执行 JavaScript功能测试...
+2025-08-29 18:49:47,984 - trading_system - INFO - 开始测试JavaScript功能...
+2025-08-29 18:49:47,984 - trading_system - INFO - ✅ JavaScript功能测试通过
+2025-08-29 18:49:47,984 - trading_system - INFO - ✅ JavaScript功能测试 通过
+2025-08-29 18:49:47,984 - trading_system - INFO - 测试完成: 6/6 通过

@@ -67,15 +67,28 @@ class CalculationException(TradingSystemException):
 
 class StrategyException(TradingSystemException):
     """策略执行异常"""
-    
+
     def __init__(self, message: str, strategy_name: Optional[str] = None):
         """初始化策略异常
-        
+
         Args:
             message: 错误消息
             strategy_name: 策略名称
         """
         super().__init__(message, 1004, {'strategy_name': strategy_name})
+
+
+class ValidationException(TradingSystemException):
+    """验证异常"""
+
+    def __init__(self, message: str, validation_type: Optional[str] = None):
+        """初始化验证异常
+
+        Args:
+            message: 错误消息
+            validation_type: 验证类型
+        """
+        super().__init__(message, 1005, {'validation_type': validation_type})
 
 
 def exception_handler(exception_types: tuple = (Exception,), 
